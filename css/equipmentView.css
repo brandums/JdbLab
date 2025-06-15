@@ -400,4 +400,20 @@
         align-items: flex-start;
         gap: 10px;
     }
+
+    .equipment-hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .equipment-hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .equipment-hero-title {
+        font-size: 2rem;
+    }
 }
