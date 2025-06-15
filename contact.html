@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | TECNOequip - Equipamiento Educativo e Industrial</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <div class="spinner">
+                    <div class="spinner-line"></div>
+                    <div class="spinner-line"></div>
+                    <div class="spinner-line"></div>
+                    <div class="spinner-circle">&#9679;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/59170769521" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="TECNOequip Logo">
+                <span class="logo-text">TECNOequip</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="equipment.html" class="nav-link">Equipos</a></li>
+                <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contact.html" class="nav-link active">Contacto</a></li>
+                <li><a href="catalogo.html" class="btn btn-nav magnetic">
+                        <span style="margin-right: 8px;">Catalogo</span><i class="fa-solid fa-circle-down"></i>
+                        <div class="btn-circle"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section Contacto -->
+    <section class="contact-hero">
+        <div class="contact-hero-bg"></div>
+        <div class="particles-js" id="particles-js"></div>
+        <div class="contact-hero-overlay"></div>
+        
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1 class="contact-hero-title" data-text-animate>Contáctanos</h1>
+                <p class="contact-hero-subtitle" data-text-animate data-delay="0.3">Estamos listos para responder tus consultas y brindarte la mejor solución</p>
+                <div class="contact-hero-breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <a href="contact.html" class="active">Contacto</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-info-card" data-text-animate>
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <p>Avenida Circunvalación s/n C. Vaticano y C.F. Pérez Saavedra, Cochabamba - Bolivia</p>
+                    <a href="https://maps.app.goo.gl/hdrySHQuw69516YV9" target="_blank" class="contact-link">
+                        <span>Ver en mapa</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-info-card" data-text-animate data-delay="0.1">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Teléfonos</h3>
+                    <p>(591) 70769521<br>(591) 77893463</p>
+                    <a href="tel:59170769521" class="contact-link">
+                        <span>Llamar ahora</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-info-card" data-text-animate data-delay="0.2">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Correo Electrónico</h3>
+                    <p>servicios@tecnoequip.com.bo<br>ventas@tecnoequip.com.bo</p>
+                    <a href="mailto:servicios@tecnoequip.com.bo" class="contact-link">
+                        <span>Enviar email</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-info-card" data-text-animate data-delay="0.3">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horario de Atención</h3>
+                    <p>Lunes a Viernes: 8:00 - 18:00<br>Sábados: 9:00 - 12:00</p>
+                    <a href="#contact-form" class="contact-link">
+                        <span>Agendar cita</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Map Section -->
+    <section class="contact-main-section">
+        <div class="container">
+            <div class="contact-main-grid">
+                <div class="contact-form-container" data-text-animate>
+                    <div class="section-header">
+                        <h2 class="section-title">Envíanos un mensaje</h2>
+                        <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo</p>
+                    </div>
+                    
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Correo electrónico *</label>
+                                <input type="email" id="email" name="email" required>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Teléfono *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="cotizacion">Solicitud de cotización</option>
+                                <option value="servicio">Consulta sobre servicios</option>
+                                <option value="equipo">Información sobre equipos</option>
+                                <option value="soporte">Soporte técnico</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Enviar Mensaje</span>
+                                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                    <path d="M1,5 L11,5"></path>
+                                    <polyline points="8 1 12 5 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-map-container" data-text-animate data-delay="0.1">
+                    <div class="section-header">
+                        <h2 class="section-title">Visítanos</h2>
+                        <p class="section-subtitle">Nuestras instalaciones en Cochabamba</p>
+                    </div>
+                    
+                    <div id="contact-map" class="contact-map">
+                        <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951.9558848957338!2d-66.13300129161185!3d-17.37222211746761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e376a28ca3321f%3A0x1d119a2cd15cc5d5!2sVaticano%2C%20Cochabamba!5e0!3m2!1ses!2sbo!4v1749911948709!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="absolute top-0 left-0 w-full h-full border-0"
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                    </div>
+                    
+                    <div class="map-info">
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <span>Edificio TECNOequip, Av. Circunvalación s/n</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-car"></i>
+                            <span>Amplio estacionamiento disponible</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-wheelchair"></i>
+                            <span>Accesible para personas con movilidad reducida</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-text-animate>Preguntas Frecuentes</h2>
+                <p class="section-subtitle" data-text-animate data-delay="0.1">Encuentra respuestas a las consultas más comunes</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item" data-text-animate>
+                    <div class="faq-question">
+                        <h3>¿Cuál es el tiempo de respuesta para consultas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Respondemos a todas las consultas dentro de las 24 horas hábiles posteriores a su recepción. Para solicitudes urgentes, recomendamos contactarnos directamente por teléfono durante nuestro horario de atención.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-text-animate data-delay="0.1">
+                    <div class="faq-question">
+                        <h3>¿Ofrecen servicios de instalación en todo el país?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, brindamos servicios de instalación y capacitación en todo el territorio boliviano. Para ubicaciones fuera de Cochabamba, aplican costos adicionales de desplazamiento que se cotizan previamente según la ubicación específica.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-text-animate data-delay="0.2">
+                    <div class="faq-question">
+                        <h3>¿Cuánto tiempo toma el proceso de calibración?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El tiempo de calibración varía según el equipo y las pruebas requeridas. En general, el proceso toma entre 1 y 3 días hábiles. Contamos con servicio express para casos urgentes, con un recargo del 30% sobre el costo normal.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-text-animate data-delay="0.3">
+                    <div class="faq-question">
+                        <h3>¿Puedo agendar una cita para visitar sus instalaciones?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Por supuesto. Nuestro showroom y taller están abiertos al público con cita previa. Puede agendar su visita a través de nuestro formulario de contacto, por teléfono o WhatsApp. Recomendamos agendar con al menos 24 horas de anticipación.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-text-animate data-delay="0.4">
+                    <div class="faq-question">
+                        <h3>¿Qué métodos de pago aceptan?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceptamos pagos en efectivo, transferencias bancarias, cheques certificados y todas las tarjetas de crédito principales (Visa, MasterCard, American Express). También ofrecemos planes de financiamiento para compras mayores a $5,000 USD.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-text-animate>¿Necesitas una solución personalizada?</h2>
+                <p data-text-animate data-delay="0.1">Nuestros especialistas están listos para asesorarte y brindarte la mejor opción para tus necesidades</p>
+                <div class="cta-buttons">
+                    <a href="tel:59170769521" class="btn btn-primary magnetic" data-text-animate data-delay="0.2">
+                        <span>Llamar Ahora</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/59170769521" class="btn btn-secondary magnetic" data-text-animate data-delay="0.3" target="_blank">
+                        <span>WhatsApp</span>
+                        <div class="btn-circle"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
+                    <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="services.html#calibracion">Calibración</a></li>
+                        <li><a href="services.html#mantenimiento">Mantenimiento</a></li>
+                        <li><a href="services.html#instalacion">Instalación</a></li>
+                        <li><a href="services.html#capacitacion">Capacitación</a></li>
+                        <li><a href="services.html#pruebas">Pruebas de Materiales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Circunvalación s/n C. Vaticano y C.F. Pérez Saavedra, Cochabamba - Bolivia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(591) 70769521 - (591) 77893463</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>servicios@tecnoequip.com.bo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</body>
+</html>

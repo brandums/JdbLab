@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECNOequip - Innovación en Equipamiento Educativo e Industrial</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- En el head de todas las páginas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <div class="spinner">
+                    <div class="spinner-line"></div>
+                    <div class="spinner-line"></div>
+                    <div class="spinner-line"></div>
+                    <div class="spinner-circle">&#9679;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/59170769521" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </a>
+
+    <!-- Navbar Moderno -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="TECNOequip Logo">
+                <span class="logo-text">TECNOequip</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active nav-link">Inicio</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="equipment.html" class="nav-link">Equipos</a></li>
+                <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contact.html" class="nav-link">Contacto</a></li>
+                <li>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                    class="btn btn-nav magnetic"
+                    download="catalogo.pdf">
+                    <span style="margin-right: 8px;">Catálogo</span>
+                    <i class="fa-solid fa-circle-down"></i>
+                    <div class="btn-circle"></div>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Efecto Parallax -->
+    <section class="hero">
+        <div class="hero-bg" data-depth="0.2"></div>
+        <div class="particles-js" id="particles-js"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Innovación en Equipamiento Educativo e Industrial</h1>
+                <p class="hero-subtitle">Soluciones técnicas de vanguardia para laboratorios e ingeniería civil</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary magnetic">
+                        <span>Explorar Servicios</span>
+                        <div class="btn-circle"></div>
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary magnetic">
+                        <span>Contacto Rápido</span>
+                        <div class="btn-circle"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-downs">
+                <div class="mousey">
+                    <div class="scroller"></div>
+                </div>
+                <p>Desplázate</p>
+            </div>
+        </div>
+
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section con Efecto 3D -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Más de 25 años de excelencia</h2>
+                <p class="section-subtitle">Pioneros en la fabricación de equipos didácticos y de ingeniería en Bolivia</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <p>Desde 1998, hemos estado comprometidos con la educación técnica y científica, proporcionando equipos de laboratorio de alta calidad para instituciones educativas y profesionales de la ingeniería civil.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number" data-count="25">0</h3>
+                                <p class="stat-label"> + Años de experiencia</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number" data-count="500">0</h3>
+                                <p class="stat-label"> + Clientes satisfechos</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number" data-count="100">0</h3>
+                                <p class="stat-label"> + Equipos diferentes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn btn-outline magnetic">
+                        <span>Nuestra Historia</span>
+                        <div class="btn-circle"></div>
+                    </a>
+                </div>
+
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="img/banner.jpg" alt="Laboratorio TECNOequip" class="about-img">
+                        <div class="floating-shape shape-1"></div>
+                        <div class="floating-shape shape-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios con Efecto Hover 3D -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Servicios Especializados</h2>
+                <p class="section-subtitle">Soluciones integrales para educación e ingeniería</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-image" style="background-image: url('img/banner.jpg');"></div>
+                    <h3>Calibración de Equipos</h3>
+                    <p>Garantizamos precisión en sus mediciones con nuestro servicio de calibración certificada bajo normas internacionales.</p>
+                    <a href="services.html#calibracion" class="service-link">
+                        <span>Más información</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="hover-effect"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-image" style="background-image: url('img/banner.jpg');"></div>
+                    <h3>Mantenimiento</h3>
+                    <p>Servicios preventivos y correctivos realizados por técnicos especializados con repuestos originales.</p>
+                    <a href="services.html#mantenimiento" class="service-link">
+                        <span>Más información</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="hover-effect"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="service-image" style="background-image: url('img/banner.jpg');"></div>
+                    <h3>Capacitación</h3>
+                    <p>Formación especializada para docentes y técnicos en el uso óptimo de equipos de laboratorio.</p>
+                    <a href="services.html#capacitacion" class="service-link">
+                        <span>Más información</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="hover-effect"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios con Efecto Tarjeta Giratoria -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Confían en nosotros</h2>
+                <p class="section-subtitle">Lo que dicen nuestros clientes</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-front">
+                        <div class="testimonial-image" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <h4>Dr. Carlos Méndez</h4>
+                        <p>Director de Ciencias</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-back">
+                        <div class="testimonial-content">
+                            <p>"Los equipos de TECNOequip han transformado nuestro laboratorio de física. La calidad y durabilidad son excepcionales."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-front">
+                        <div class="testimonial-image" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                        <h4>Ing. Laura Fernández</h4>
+                        <p>Jefa de Laboratorio</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-back">
+                        <div class="testimonial-content">
+                            <p>"El servicio de calibración es impecable. Certificados detallados y entrega puntual. Nuestra opción preferida desde hace años."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-front">
+                        <div class="testimonial-image" style="background-image: url('https://randomuser.me/api/portraits/men/75.jpg');"></div>
+                        <h4>Lic. Roberto Vargas</h4>
+                        <p>Coordinador Académico</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-back">
+                        <div class="testimonial-content">
+                            <p>"Las capacitaciones para nuestro personal fueron fundamentales. Ahora aprovechamos al 100% las capacidades de los equipos."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA con Efecto de Degradado Animado -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para llevar tu institución al siguiente nivel?</h2>
+                <p>Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus objetivos educativos y técnicos.</p>
+                <a href="contact.html" class="btn btn-primary btn-large magnetic">
+                    <span>Solicitar Cotización</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
+                    <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="services.html#calibracion">Calibración</a></li>
+                        <li><a href="services.html#mantenimiento">Mantenimiento</a></li>
+                        <li><a href="services.html#instalacion">Instalación</a></li>
+                        <li><a href="services.html#capacitacion">Capacitación</a></li>
+                        <li><a href="services.html#pruebas">Pruebas de Materiales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Circunvalación s/n C. Vaticano y C.F. Pérez Saavedra, Cochabamba - Bolivia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(591) 70769521 - (591) 77893463</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>servicios@tecnoequip.com.bo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

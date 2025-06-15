@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipos | TECNOequip - Equipamiento Educativo e Industrial</title>
+    <!-- Incluye los mismos estilos y scripts que en las otras páginas -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/equipment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <div class="spinner">
+                    <div class="spinner-line"></div>
+                    <div class="spinner-line"></div>
+                    <div class="spinner-line"></div>
+                    <div class="spinner-circle">&#9679;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/59170769521" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </a>
+
+     <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="TECNOequip Logo">
+                <span class="logo-text">TECNOequip</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="equipment.html" class="nav-link active">Equipos</a></li>
+                <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                <li><a href="contact.html" class="nav-link">Contacto</a></li>
+                <li><a href="catalogo.html" class="btn btn-nav magnetic">
+                        <span style="margin-right: 8px;">Catalogo</span><i class="fa-solid fa-circle-down"></i>
+                        <div class="btn-circle"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section específica para Equipos -->
+    <section class="equipment-hero">
+        <div class="equipment-hero-bg"></div>
+        <div class="particles-js" id="particles-js"></div>
+        <div class="equipment-hero-overlay"></div>
+        
+        <div class="container">
+            <div class="equipment-hero-content">
+                <h1 class="equipment-hero-title" data-text-animate>Nuestros Equipos</h1>
+                <p class="equipment-hero-subtitle" data-text-animate data-delay="0.3">Tecnología especializada para educación e ingeniería</p>
+                <div class="equipment-hero-breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <a href="equipment.html" class="active">Equipos</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Sección de Categorías -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-text-animate>Explora Nuestros Equipos</h2>
+                <p class="section-subtitle" data-text-animate data-delay="0.1">Selecciona una categoría para ver los equipos disponibles</p>
+            </div>
+            
+            <!-- Pestañas de categorías principales -->
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">Todos los Equipos</button>
+                <button class="category-tab" data-category="jdb">🧪 Equipos JDBLab (Física)</button>
+                <button class="category-tab" data-category="tecno">🏗️ Equipos TecnoEquip (Ingeniería Civil)</button>
+            </div>
+            
+            <!-- Filtros por subcategoría -->
+            <div class="subcategory-filters">
+                <div class="filter-group jdb-filters">
+                    <button class="filter-btn active" data-subcategory="all-fisica">Todos</button>
+                    <button class="filter-btn" data-subcategory="fisica1">Física I</button>
+                    <button class="filter-btn" data-subcategory="fisica2">Física II</button>
+                    <button class="filter-btn" data-subcategory="fisica3">Física III</button>
+                </div>
+                
+                <div class="filter-group tecno-filters">
+                    <button class="filter-btn active" data-subcategory="all-civil">Todos</button>
+                    <button class="filter-btn" data-subcategory="suelos-campo">Suelos de Campo</button>
+                    <button class="filter-btn" data-subcategory="suelos-lab">Suelos de Laboratorio</button>
+                    <button class="filter-btn" data-subcategory="asfalto">Asfalto</button>
+                    <button class="filter-btn" data-subcategory="concreto">Concreto</button>
+                    <button class="filter-btn" data-subcategory="cemento">Cemento</button>
+                    <button class="filter-btn" data-subcategory="agregado">Agregado</button>
+                    <button class="filter-btn" data-subcategory="general">Equipo General</button>
+                </div>
+            </div>
+
+            <div class="search-and-filters">
+                <div class="equipment-search-container">
+                    <input type="text" id="equipment-search" placeholder="Buscar equipos...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <!-- Contador de resultados -->
+            <div class="results-counter">
+                Mostrando <span id="results-count">0</span> equipos
+            </div>
+            
+            <!-- Grid de equipos -->
+            <div class="equipment-grid" id="equipment-grid">
+                <!-- Los equipos se cargarán aquí dinámicamente -->
+            </div>
+            
+            <!-- Mensaje cuando no hay resultados -->
+            <div class="no-results" id="no-results">
+                <img src="img/empty.svg" alt="No se encontraron resultados">
+                <h3>No se encontraron equipos</h3>
+                <p>Intenta con otros filtros de búsqueda</p>
+            </div>
+
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </section>
+
+    <!-- CTA con Efecto de Degradado Animado -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para llevar tu institución al siguiente nivel?</h2>
+                <p>Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus objetivos educativos y técnicos.</p>
+                <a href="contact.html" class="btn btn-primary btn-large magnetic">
+                    <span>Solicitar Cotización</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
+                    <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="services.html#calibracion">Calibración</a></li>
+                        <li><a href="services.html#mantenimiento">Mantenimiento</a></li>
+                        <li><a href="services.html#instalacion">Instalación</a></li>
+                        <li><a href="services.html#capacitacion">Capacitación</a></li>
+                        <li><a href="services.html#pruebas">Pruebas de Materiales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Circunvalación s/n C. Vaticano y C.F. Pérez Saavedra, Cochabamba - Bolivia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(591) 70769521 - (591) 77893463</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>servicios@tecnoequip.com.bo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/equipment-data.js"></script> <!-- Datos de los equipos -->
+    <script src="js/equipment.js"></script> <!-- Lógica de filtrado -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</body>
+</html>

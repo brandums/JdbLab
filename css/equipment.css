@@ -1,0 +1,421 @@
+/* Estilos para la sección hero de equipos */
+.equipment-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.equipment-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/banner.jpg') no-repeat center center/cover;
+    z-index: 0;
+}
+
+.equipment-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 51, 102, 0.9) 0%, 
+        rgba(0, 86, 179, 0.8) 100%);
+    z-index: 1;
+}
+
+.equipment-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.equipment-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.equipment-hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.equipment-hero-breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.equipment-hero-breadcrumb a {
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.equipment-hero-breadcrumb a:hover {
+    color: var(--accent-color);
+}
+
+.equipment-hero-breadcrumb span {
+    margin: 0 10px;
+    opacity: 0.6;
+}
+
+.equipment-hero-breadcrumb .active {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+
+/* Estilos para las pestañas de categorías */
+.categories-section
+{
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.category-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.category-tab {
+    padding: 12px 24px;
+    border-radius: 50px;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.category-tab:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+/* Filtros por subcategoría */
+.subcategory-filters {
+    margin-bottom: 30px;
+}
+
+.filter-group {
+    display: none;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.filter-group.active {
+    display: flex;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: white;
+    color: var(--text-color);
+    border: 1px solid var(--gray);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: var(--light-color);
+}
+
+/* Contador de resultados */
+.results-counter {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.results-counter span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Grid de equipos */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.equipment-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.equipment-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.equipment-card:hover .equipment-image img {
+    transform: scale(1.05);
+}
+
+.equipment-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.equipment-category {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.equipment-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+.equipment-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.equipment-details-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.equipment-details-btn:hover {
+    color: var(--primary-dark);
+    gap: 8px;
+}
+
+/* Mensaje sin resultados */
+.no-results {
+    text-align: center;
+    padding: 50px 0;
+    display: none;
+}
+
+.no-results img {
+    max-width: 200px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.no-results h3 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.no-results p {
+    color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .equipment-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .category-tabs {
+        flex-direction: column;
+    }
+    
+    .category-tab {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .equipment-hero-title {
+        font-size: 2rem;
+    }
+    
+    .equipment-hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .filter-group {
+        overflow-x: auto;
+        padding-bottom: 10px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el buscador */
+.search-and-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.equipment-search-container {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.equipment-search-container input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border-radius: 50px;
+    border: 1px solid var(--gray);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background-color: rgba(0, 86, 179, 0.05);
+}
+
+.equipment-search-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.equipment-search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
+/* Estilos para paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--text-color);
+    border: 1px solid var(--gray);
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 40px;
+    text-align: center;
+}
+
+.pagination-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination-btn:hover:not(.active) {
+    background-color: var(--light-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-and-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .equipment-search-container {
+        max-width: 100%;
+    }
+    
+    .category-tabs {
+        order: 2;
+    }
+}
