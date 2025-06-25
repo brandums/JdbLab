@@ -1,5 +1,7 @@
 /* Reset y Estilos Base */
 :root {
+    --special-color: #f4bf00;
+    --special-dark: #d4a300;
     --primary-color: #0056b3;
     --primary-dark: #003366;
     --primary-light: #4da6ff;
@@ -116,7 +118,7 @@ a {
 .btn-nav {
     padding: 10px 25px;
     margin-left: 15px;
-    background-color: var(--primary-color);
+    background-color: var(--special-color);
     color: var(--white);
     border-radius: 50px;
     font-weight: 600;
@@ -124,7 +126,7 @@ a {
 }
 
 .btn-nav:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--special-dark);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
 }
@@ -262,7 +264,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 8px 0;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -288,7 +290,7 @@ a {
 }
 
 .logo img {
-    height: 40px;
+    height: 70px;
     transition: var(--transition);
 }
 
