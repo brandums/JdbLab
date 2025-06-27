@@ -523,3 +523,53 @@
         height: 300px;
     }
 }
+
+
+
+
+
+
+/* Campo con error */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+}
+
+.form-group.error label {
+    color: #e74c3c;
+}
+
+.form-group.error i {
+    color: #e74c3c;
+}
+
+.form-success-message {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 20px;
+    padding: 1rem;
+    border: 1px solid #2ecc71;
+    border-radius: 8px;
+    background-color: #ecfef1;
+    color: #2ecc71;
+    font-family: inherit;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-success-message i {
+    font-size: 2rem;
+}
+
+.form-success-message h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.form-success-message p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #27ae60;
+}
