@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    equipmentData = await getEquipmentData();
     // Elementos del DOM
     const categoryTabs = document.querySelectorAll('.category-tab');
     const filterBtns = document.querySelectorAll('.filter-btn');
