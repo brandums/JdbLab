@@ -1,11 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    equipmentData = await getEquipmentData();
     // Obtener el ID del producto de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id'));
     
     // Buscar el producto en los datos
     const product = equipmentData.find(item => item.id === productId);
-    
+
+
     if (!product) {
         // Redirigir si no se encuentra el producto
         window.location.href = 'equipment.html';

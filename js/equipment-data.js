@@ -13,7 +13,10 @@ async function fetchEquipmentData() {
             id: Number(item.id),
             name: item.name,
             description: item.description,
-            imageUrl: item.imageUrl.startsWith('http') ? item.imageUrl : `img/${item.imageUrl}`,
+            imageUrl: item.imageUrl
+                    ? (item.imageUrl.startsWith('http') ? item.imageUrl : `img/${item.imageUrl}`)
+                    : 'img/noimage.avif',
+
             category: item.category.toLowerCase(), // Aseguramos minúsculas
             subcategory: item.subcategory,
             specs: Array.isArray(item.specs) ? item.specs : JSON.parse(item.specs),
