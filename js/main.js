@@ -187,3 +187,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+
+
+
+
+
+
+
+(function () {
+    const dropdown = document.getElementById('catalogoDropdown');
+    if (!dropdown) return;
+
+    const btn = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.catalogo-menu');
+
+    const close = () => {
+      dropdown.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    };
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = dropdown.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) close();
+    });
+
+    // Cerrar con Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+
+    // Accesibilidad: abrir con flecha abajo y enfocar primera opción
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const firstItem = menu.querySelector('a');
+        if (firstItem) firstItem.focus();
+        dropdown.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();

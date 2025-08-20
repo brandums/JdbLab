@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECNOequip - Detalle de Producto</title>
+    <title>Capacitaciones | TECNOequip - Equipamiento Educativo e Industrial</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/equipmentView.css">
+    <link rel="stylesheet" href="css/trainings.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,13 +26,13 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp -->
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/59177893463" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
     </a>
 
-    <!-- Navbar Moderno -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -46,10 +46,10 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="services.html" class="nav-link">Servicios</a></li>
-                <li><a href="equipment.html" class="active nav-link">Equipos</a></li>
+                <li><a href="equipment.html" class="nav-link">Equipos</a></li>
                 <li><a href="about.html" class="nav-link">Nosotros</a></li>
                 <li><a href="contact.html" class="nav-link">Contacto</a></li>
-                <li><a href="trainings.html" class="nav-link">Capacitaciones</a></li>
+                <li><a href="trainings.html" class="nav-link active">Capacitaciones</a></li>
                 <li class="catalogo-dropdown" id="catalogoDropdown">
                     <button id="catalogoBtn" class="btn btn-nav magnetic dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="catalogoMenu">
                         <span style="margin-right: 8px;">Catálogo</span>
@@ -66,127 +66,91 @@
         </div>
     </nav>
 
-    <section class="equipment-hero">
-        <div class="equipment-hero-bg"></div>
+    <!-- Hero Section Capacitaciones -->
+    <section class="capacitaciones-hero">
+        <div class="capacitaciones-hero-bg"></div>
         <div class="particles-js" id="particles-js"></div>
-        <div class="equipment-hero-overlay"></div>
+        <div class="capacitaciones-hero-overlay"></div>
         
         <div class="container">
-            <div class="equipment-hero-content">
-                <h1 class="equipment-hero-title" data-text-animate>Detalles del Equipo</h1>
-                <div class="equipment-hero-breadcrumb">
+            <div class="capacitaciones-hero-content">
+                <h1 class="capacitaciones-hero-title" data-text-animate>Nuestras Capacitaciones</h1>
+                <p class="capacitaciones-hero-subtitle" data-text-animate data-delay="0.3">Programas especializados para profesionales e instituciones</p>
+                <div class="capacitaciones-hero-breadcrumb">
                     <a href="index.html">Inicio</a>
                     <span>/</span>
-                    <a href="equipment.html" class="active">Equipos</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div> -->
-    </section>
-
-    <!-- Breadcrumb -->
-    <section style="display: none;" class="breadcrumb-section">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="equipment.html">Equipos</a></li>
-                <li class="active" id="breadcrumb-product">Detalle de Producto</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Product Detail Section -->
-    <section class="product-detail-section">
-        <div class="container">
-            <div class="product-detail-grid">
-                <!-- Product Gallery -->
-                <div class="product-gallery">
-                    <div class="main-image">
-                        <img id="product-main-image" src="" alt="Imagen principal del producto">
-                    </div>
-                    <div class="thumbnails">
-                        <!-- Thumbnails will be added dynamically -->
-                    </div>
-                </div>
-
-                <!-- Product Info -->
-                <div class="product-info">
-                    <h1 id="product-name">Nombre del Producto</h1>
-                    <div class="product-meta">
-                        <span class="category" id="product-category">Categoría</span>
-                        <span class="sku">SKU: <span id="product-id">ID</span></span>
-                    </div>
-
-                    <div id="product-price" class="product-price"></div>
-
-                    <div class="product-description">
-                        <p id="product-description">Descripción detallada del producto...</p>
-                    </div>
-
-                    <!-- Specifications -->
-                    <div class="specs-section">
-                        <h3><i class="fas fa-list-alt"></i> Especificaciones Técnicas</h3>
-                        <ul class="specs-list" id="product-specs">
-                            <!-- Specs will be added dynamically -->
-                        </ul>
-                    </div>
-
-                    <!-- Features -->
-                    <div class="features-section">
-                        <h3><i class="fas fa-star"></i> Características Principales</h3>
-                        <ul class="features-list" id="product-features">
-                            <!-- Features will be added dynamically -->
-                        </ul>
-                    </div>
-
-                    <!-- CTA Buttons -->
-                    <div class="product-actions">
-                        <a href="contact.html" class="btn btn-primary magnetic">
-                            <span>Solicitar Cotización</span>
-                            <div class="btn-circle"></div>
-                        </a>
-                        <a href="equipment.html" class="btn btn-outline magnetic">
-                            <span>Ver más productos</span>
-                            <div class="btn-circle"></div>
-                        </a>
-                    </div>
+                    <a href="capacitaciones.html" class="active">Capacitaciones</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Related Products -->
-    <section class="related-products-section">
+    <!-- Capacitaciones Section -->
+    <section class="capacitaciones-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Productos Relacionados</h2>
-                <p class="section-subtitle">Equipos similares que podrían interesarte</p>
+                <h2 class="section-title" data-text-animate>Programas de Formación</h2>
+                <p class="section-subtitle" data-text-animate data-delay="0.1">Invierte en tu desarrollo profesional con nuestros cursos especializados</p>
             </div>
-            <div class="related-products-grid" id="related-products">
-                <!-- Related products will be added dynamically -->
+            
+            <div class="capacitaciones-grid" id="capacitaciones-container">
+                <!-- Las capacitaciones se cargarán dinámicamente con JavaScript -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Cargando capacitaciones...</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="capacitaciones-cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>¿Necesitas asesoría técnica especializada?</h2>
-                <p>Nuestros ingenieros están listos para ayudarte a encontrar el equipo perfecto para tus necesidades.</p>
-                <a href="contact.html" class="btn btn-primary btn-large magnetic">
-                    <span>Contactar a un Especialista</span>
-                </a>
+            <div class="capacitaciones-cta-content">
+                <h2 data-text-animate>¿Necesitas una capacitación personalizada?</h2>
+                <p data-text-animate data-delay="0.1">Contáctanos para desarrollar programas a medida para tu institución o empresa.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary magnetic" data-text-animate data-delay="0.2">
+                        <span>Solicitar Información</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Moderno -->
+    <!-- Modal de Inscripción -->
+    <div class="modal" id="inscription-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2 class="modal-title">Inscripción al Curso</h2>
+            
+            <div class="course-info" id="modal-course-info">
+            </div>
+            
+            <form id="inscription-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono *</label>
+                    <input type="tel" id="telefono" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo Electrónico *</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Enviar Inscripción por WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -207,6 +171,7 @@
                         <li><a href="about.html">Nosotros</a></li>
                         <li><a href="services.html">Servicios</a></li>
                         <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="capacitaciones.html">Capacitaciones</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -248,10 +213,12 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="js/gsap.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/equipment-data.js"></script>
-    <script src="js/equipmentView.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- Script para Capacitaciones -->
+    <script src="js/trainings.js"></script>
 </body>
 </html>

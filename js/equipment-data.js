@@ -20,7 +20,8 @@ async function fetchEquipmentData() {
             category: item.category.toLowerCase(), // Aseguramos minúsculas
             subcategory: item.subcategory,
             specs: Array.isArray(item.specs) ? item.specs : JSON.parse(item.specs),
-            features: Array.isArray(item.features) ? item.features : JSON.parse(item.features)
+            features: Array.isArray(item.features) ? item.features : JSON.parse(item.features),
+            price: item.price
         }));
     } catch (error) {
         console.error('Error fetching equipment data:', error);

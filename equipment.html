@@ -50,10 +50,18 @@
                 <li><a href="equipment.html" class="nav-link active">Equipos</a></li>
                 <li><a href="about.html" class="nav-link">Nosotros</a></li>
                 <li><a href="contact.html" class="nav-link">Contacto</a></li>
-                <li><a href="catalogo.html" class="btn btn-nav magnetic">
-                        <span style="margin-right: 8px;">Catalogo</span><i class="fa-solid fa-circle-down"></i>
+                <li><a href="trainings.html" class="nav-link">Capacitaciones</a></li>
+                <li class="catalogo-dropdown" id="catalogoDropdown">
+                    <button id="catalogoBtn" class="btn btn-nav magnetic dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="catalogoMenu">
+                        <span style="margin-right: 8px;">Catálogo</span>
+                        <i class="fa-solid fa-circle-down"></i>
                         <div class="btn-circle"></div>
-                    </a>
+                    </button>
+
+                    <ul class="catalogo-menu" id="catalogoMenu" role="menu" aria-labelledby="catalogoBtn">
+                        <li><a href="JDBLab.docx" download="JDBLab.docx" role="menuitem">JDBLab</a></li>
+                        <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

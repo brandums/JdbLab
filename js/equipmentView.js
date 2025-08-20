@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Buscar el producto en los datos
     const product = equipmentData.find(item => item.id === productId);
 
-
     if (!product) {
         // Redirigir si no se encuentra el producto
         window.location.href = 'equipment.html';
@@ -19,6 +18,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     document.getElementById('breadcrumb-product').textContent = product.name;
     document.getElementById('product-description').textContent = product.description;
     document.getElementById('product-id').textContent = product.id;
+
+    // Mostrar precio solo si es distinto de 0
+    const priceContainer = document.getElementById('product-price');
+    if (product.price && product.price != 0) {
+        priceContainer.textContent = `Precio: Bs. ${product.price.toLocaleString()}`;
+    } else {
+        priceContainer.style.display = 'none';
+    }
     
     // Establecer categoría
     const categoryMap = {

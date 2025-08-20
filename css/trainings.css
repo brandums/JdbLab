@@ -1,0 +1,428 @@
+/* Capacitaciones Hero Section */
+.capacitaciones-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.capacitaciones-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/banner.jpg') no-repeat center center/cover;
+    z-index: 0;
+}
+
+.capacitaciones-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 51, 102, 0.9) 0%, 
+        rgba(0, 86, 179, 0.8) 100%);
+    z-index: 1;
+}
+
+.capacitaciones-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.capacitaciones-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.capacitaciones-hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.capacitaciones-hero-breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.capacitaciones-hero-breadcrumb a {
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.capacitaciones-hero-breadcrumb a:hover {
+    color: var(--accent-color);
+}
+
+.capacitaciones-hero-breadcrumb span {
+    margin: 0 10px;
+    opacity: 0.6;
+}
+
+.capacitaciones-hero-breadcrumb .active {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Capacitaciones Section */
+.capacitaciones-section {
+    padding: 100px 0;
+    background-color: var(--white);
+    position: relative;
+}
+
+.capacitaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.course-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.course-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.course-card:hover .course-image img {
+    transform: scale(1.05);
+}
+
+.course-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.course-card:hover .course-overlay {
+    opacity: 1;
+}
+
+.btn-view-details {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-view-details:hover {
+    background-color: var(--primary-color);
+}
+
+.course-content {
+    padding: 25px;
+}
+
+.course-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.course-description {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.btn-inscribirse {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-inscribirse:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.loading-spinner .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--light-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.error-message i {
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.error-message h3 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.error-message p {
+    margin-bottom: 25px;
+    color: var(--text-light);
+}
+
+/* No Courses */
+.no-courses {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.no-courses i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.no-courses h3 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.no-courses p {
+    color: var(--text-light);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--primary-dark);
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+    text-align: center;
+}
+
+.course-info {
+    background: var(--light-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.course-info p {
+    margin-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* CTA Section */
+.capacitaciones-cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.capacitaciones-cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.capacitaciones-cta-content p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .capacitaciones-hero-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .capacitaciones-hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .capacitaciones-hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .capacitaciones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-meta {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .btn-inscribirse {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .capacitaciones-hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+    
+    .capacitaciones-cta-content h2 {
+        font-size: 2rem;
+    }
+}

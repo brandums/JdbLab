@@ -417,3 +417,11 @@
         font-size: 2rem;
     }
 }
+
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(199, 199, 20); /* verde elegante */
+    margin-bottom: 20px;
+}
