@@ -39,6 +39,24 @@ document.addEventListener('DOMContentLoaded', async function() {
     mainImage.src = product.imageUrl;
     mainImage.alt = product.name;
     
+
+    // Agregar después de setear la imagen principal
+    const thumbnailsContainer = document.querySelector('.thumbnails');
+    // Solo si existen imágenes extra
+    if (product.images && product.images.length > 0) {
+        product.images.forEach((imgUrl, index) => {
+            const thumb = document.createElement('div');
+            thumb.className = 'thumbnail';
+            thumb.innerHTML = `<img src="${imgUrl}" alt="${product.name} - Imagen ${index + 1}">`;
+            thumbnailsContainer.appendChild(thumb);
+
+            // Al hacer click, mostrar popup
+            thumb.addEventListener('click', () => {
+                showImagePopup(imgUrl, product.name);
+            });
+        });
+    }
+
     // Agregar especificaciones
     const specsList = document.getElementById('product-specs');
     product.specs.forEach(spec => {
@@ -149,4 +167,33 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         });
     });
+
+
+
+
+
+
+
+    
+
+    // Función para mostrar popup
+    function showImagePopup(url, alt) {
+        // Crear overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'image-popup-overlay';
+        overlay.innerHTML = `
+            <div class="image-popup-content">
+                <img src="${url}" alt="${alt}">
+                <span class="close-popup">&times;</span>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Cerrar al hacer click en X o en overlay
+        overlay.querySelector('.close-popup').addEventListener('click', () => overlay.remove());
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) overlay.remove();
+        });
+    }
+
 });

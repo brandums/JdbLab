@@ -21,7 +21,8 @@ async function fetchEquipmentData() {
             subcategory: item.subcategory,
             specs: Array.isArray(item.specs) ? item.specs : JSON.parse(item.specs),
             features: Array.isArray(item.features) ? item.features : JSON.parse(item.features),
-            price: item.price
+            price: item.price,
+            images: item.images
         }));
     } catch (error) {
         console.error('Error fetching equipment data:', error);
