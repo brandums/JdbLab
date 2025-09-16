@@ -44,22 +44,33 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="services.html" class="nav-link active">Servicios</a></li>
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>Inicio</a></li>
                 <li><a href="equipment.html" class="nav-link">Equipos</a></li>
-                <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                <li><a href="services.html" class="active nav-link">Servicios</a></li>
+                <li><a href="trainings.html" class="nav-link">Cursos</a></li>
                 <li><a href="contact.html" class="nav-link">Contacto</a></li>
-                <li><a href="trainings.html" class="nav-link">Capacitaciones</a></li>
+                
                 <li class="catalogo-dropdown" id="catalogoDropdown">
                     <button id="catalogoBtn" class="btn btn-nav magnetic dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="catalogoMenu">
-                        <span style="margin-right: 8px;">Catálogo</span>
+                        <span style="margin-right: 8px;">Descargas</span>
                         <i class="fa-solid fa-circle-down"></i>
                         <div class="btn-circle"></div>
                     </button>
 
                     <ul class="catalogo-menu" id="catalogoMenu" role="menu" aria-labelledby="catalogoBtn">
-                        <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab</a></li>
-                        <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip</a></li>
+                        <!-- Catálogos con submenú -->
+                        <li class="submenu">
+                        <a href="#" role="menuitem">Catálogos <i class="fa-solid fa-angle-right" style="float:right;"></i></a>
+                        <ul class="submenu-items">
+                            <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab (Física)</a></li>
+                            <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip (Ing. Civil)</a></li>
+                        </ul>
+                        </li>
+
+                        <!-- Otras opciones -->
+                        <li><a href="#" role="menuitem">Manuales</a></li>
+                        <li><a href="#" role="menuitem">Guías de laboratorio</a></li>
+                        <li><a href="#" role="menuitem">Publicaciones</a></li>
                     </ul>
                 </li>
             </ul>
@@ -67,7 +78,7 @@
     </nav>
 
     <!-- Hero Section Servicios -->
-    <section class="services-hero">
+    <!-- <section class="services-hero">
         <div class="services-hero-bg"></div>
         <div class="particles-js" id="particles-js"></div>
         <div class="services-hero-overlay"></div>
@@ -83,53 +94,60 @@
                 </div>
             </div>
         </div>
-        
-        <!-- <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div> -->
-    </section>
+    </section> -->
 
     <!-- Servicios Destacados -->
     <section class="featured-services">
         <div class="container">
-            <div class="section-header">
+            <!-- <div class="section-header">
                 <h2 class="section-title" data-text-animate>Soluciones Especializadas</h2>
                 <p class="section-subtitle" data-text-animate data-delay="0.1">Servicios diseñados para maximizar el potencial de sus equipos</p>
-            </div>
+            </div> -->
             
             <div class="services-highlights">
-                <div class="service-highlight-card" data-text-animate>
+                <!-- Calibración -->
+                <div class="service-highlight-card" data-text-animate onclick="scrollToService('calibracion')">
                     <div class="highlight-icon">
-                        <i class="fas fa-tachometer-alt"></i>
+                        <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Precisión</h3>
-                    <p>Resultados exactos y confiables en todos nuestros servicios</p>
+                    <h3>Calibración</h3>
+                    <p>Precisión certificada en equipos de laboratorio según normas internacionales</p>
                 </div>
                 
-                <div class="service-highlight-card" data-text-animate data-delay="0.1">
+                <!-- Mantenimiento -->
+                <div class="service-highlight-card" data-text-animate data-delay="0.1" onclick="scrollToService('mantenimiento')">
                     <div class="highlight-icon">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Certificación</h3>
-                    <p>Cumplimiento de normas internacionales ASTM y AASHTO</p>
+                    <h3>Mantenimiento</h3>
+                    <p>Preventivo y correctivo para maximizar la vida útil de sus equipos</p>
                 </div>
                 
-                <div class="service-highlight-card" data-text-animate data-delay="0.2">
+                <!-- Instalación -->
+                <div class="service-highlight-card" data-text-animate data-delay="0.2" onclick="scrollToService('instalacion')">
                     <div class="highlight-icon">
-                        <i class="fas fa-user-tie"></i>
+                        <i class="fas fa-wrench"></i>
                     </div>
-                    <h3>Expertos</h3>
-                    <p>Profesionales con más de 15 años de experiencia</p>
+                    <h3>Instalación</h3>
+                    <p>Profesional de equipos didácticos y tecnológicos con asesoría especializada</p>
                 </div>
                 
-                <div class="service-highlight-card" data-text-animate data-delay="0.3">
+                <!-- Capacitación -->
+                <div class="service-highlight-card" data-text-animate data-delay="0.3" onclick="scrollToService('capacitacion')">
                     <div class="highlight-icon">
-                        <i class="fas fa-headset"></i>
+                        <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3>Soporte</h3>
-                    <p>Asesoría técnica permanente antes, durante y después</p>
+                    <h3>Capacitación</h3>
+                    <p>Especializada para docentes y técnicos en el uso correcto de equipos</p>
+                </div>
+                
+                <!-- Pruebas -->
+                <div class="service-highlight-card" data-text-animate data-delay="0.4" onclick="scrollToService('pruebas')">
+                    <div class="highlight-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Pruebas de Materiales</h3>
+                    <p>Ensayos tecnológicos con estándares ASTM y AASHTO para construcción</p>
                 </div>
             </div>
         </div>
@@ -149,10 +167,10 @@
                     </div>
                     <div class="service-detail-content">
                         <h2 data-text-animate>Servicio de Calibración</h2>
-                        <div class="service-meta">
+                        <!-- <div class="service-meta">
                             <span class="service-category"><i class="fas fa-flask"></i> Laboratorio</span>
                             <span class="service-duration"><i class="far fa-clock"></i> 1-3 días</span>
-                        </div>
+                        </div> -->
                         <p data-text-animate data-delay="0.1">Contamos con un taller especializado para realizar la calibración precisa de equipos de laboratorio, asegurando el cumplimiento de normas internacionales. Este servicio garantiza resultados confiables en prácticas académicas y ensayos técnicos.</p>
                         
                         <div class="service-features">
@@ -174,7 +192,11 @@
                             </div>
                         </div>
                         
-                        <a href="contact.html" class="btn btn-primary magnetic" data-text-animate data-delay="0.6">
+                        <a href="https://wa.me/59177893463?text=Hola,%20estoy%20interesado%20en%20el%20Servicio%20de%20Calibración" 
+                           class="btn btn-primary magnetic" 
+                           target="_blank"
+                           data-text-animate 
+                           data-delay="0.6">
                             <span>Solicitar Servicio</span>
                             <svg viewBox="0 0 13 10" height="10px" width="15px">
                                 <path d="M1,5 L11,5"></path>
@@ -196,10 +218,10 @@
                     </div>
                     <div class="service-detail-content">
                         <h2 data-text-animate>Mantenimiento General y Preventivo</h2>
-                        <div class="service-meta">
+                        <!-- <div class="service-meta">
                             <span class="service-category"><i class="fas fa-tools"></i> Técnico</span>
                             <span class="service-duration"><i class="far fa-clock"></i> Varía según equipo</span>
-                        </div>
+                        </div> -->
                         <p data-text-animate data-delay="0.1">Ofrecemos servicios integrales de mantenimiento preventivo y correctivo para prolongar la vida útil de los equipos. Nuestro equipo técnico está capacitado para detectar fallas, realizar ajustes y reponer repuestos originales, minimizando tiempos de inactividad en laboratorios e instituciones.</p>
                         
                         <div class="service-features">
@@ -221,7 +243,11 @@
                             </div>
                         </div>
                         
-                        <a href="contact.html" class="btn btn-primary magnetic" data-text-animate data-delay="0.6">
+                        <a href="https://wa.me/59177893463?text=Hola,%20estoy%20interesado%20en%20el%20Servicio%20de%20Mantenimiento" 
+                           class="btn btn-primary magnetic" 
+                           target="_blank"
+                           data-text-animate 
+                           data-delay="0.6">
                             <span>Solicitar Servicio</span>
                             <svg viewBox="0 0 13 10" height="10px" width="15px">
                                 <path d="M1,5 L11,5"></path>
@@ -242,11 +268,11 @@
                         </div>
                     </div>
                     <div class="service-detail-content">
-                        <h2 data-text-animate>Instalación Profesional</h2>
-                        <div class="service-meta">
+                        <h2 data-text-animate>Instalación de nuestros equipos u otros</h2>
+                        <!-- <div class="service-meta">
                             <span class="service-category"><i class="fas fa-building"></i> Instalación</span>
                             <span class="service-duration"><i class="far fa-clock"></i> 1-2 días</span>
-                        </div>
+                        </div> -->
                         <p data-text-animate data-delay="0.1">Brindamos instalación profesional de todos nuestros equipos, tanto didácticos como tecnológicos. Este servicio incluye asesoría previa, verificación del espacio físico, montaje y pruebas de funcionamiento, asegurando una implementación óptima.</p>
                         
                         <div class="service-features">
@@ -268,7 +294,11 @@
                             </div>
                         </div>
                         
-                        <a href="contact.html" class="btn btn-primary magnetic" data-text-animate data-delay="0.6">
+                        <a href="https://wa.me/59177893463?text=Hola,%20estoy%20interesado%20en%20el%20Servicio%20de%20Instalación" 
+                           class="btn btn-primary magnetic" 
+                           target="_blank"
+                           data-text-animate 
+                           data-delay="0.6">
                             <span>Solicitar Servicio</span>
                             <svg viewBox="0 0 13 10" height="10px" width="15px">
                                 <path d="M1,5 L11,5"></path>
@@ -290,10 +320,10 @@
                     </div>
                     <div class="service-detail-content">
                         <h2 data-text-animate>Capacitación Especializada</h2>
-                        <div class="service-meta">
+                        <!-- <div class="service-meta">
                             <span class="service-category"><i class="fas fa-graduation-cap"></i> Educación</span>
                             <span class="service-duration"><i class="far fa-clock"></i> 1-5 días</span>
-                        </div>
+                        </div> -->
                         <p data-text-animate data-delay="0.1">Nuestros servicios incluyen capacitación especializada para docentes y técnicos en el uso correcto de los equipos. Disponemos de una sala de capacitación equipada, además de la posibilidad de realizar talleres in situ. También atendemos solicitudes de formación personalizada, según los requerimientos de cada institución.</p>
                         
                         <div class="service-features">
@@ -315,7 +345,11 @@
                             </div>
                         </div>
                         
-                        <a href="contact.html" class="btn btn-primary magnetic" data-text-animate data-delay="0.6">
+                        <a href="https://wa.me/59177893463?text=Hola,%20estoy%20interesado%20en%20el%20Servicio%20de%20Capacitación" 
+                           class="btn btn-primary magnetic" 
+                           target="_blank"
+                           data-text-animate 
+                           data-delay="0.6">
                             <span>Solicitar Servicio</span>
                             <svg viewBox="0 0 13 10" height="10px" width="15px">
                                 <path d="M1,5 L11,5"></path>
@@ -337,10 +371,10 @@
                     </div>
                     <div class="service-detail-content">
                         <h2 data-text-animate>Pruebas Especiales de Materiales</h2>
-                        <div class="service-meta">
+                        <!-- <div class="service-meta">
                             <span class="service-category"><i class="fas fa-hard-hat"></i> Ingeniería</span>
                             <span class="service-duration"><i class="far fa-clock"></i> Varía según prueba</span>
-                        </div>
+                        </div> -->
                         <p data-text-animate data-delay="0.1">Realizamos ensayos tecnológicos y pruebas especiales en materiales como suelos, agregados, hormigón, cemento, acero y asfalto. Nuestros equipos cumplen con estándares ASTM, AASHTO y otras normativas internacionales, ofreciendo resultados confiables para investigaciones, proyectos de construcción y control de calidad.</p>
                         
                         <div class="service-features">
@@ -362,7 +396,11 @@
                             </div>
                         </div>
                         
-                        <a href="contact.html" class="btn btn-primary magnetic" data-text-animate data-delay="0.6">
+                        <a href="https://wa.me/59177893463?text=Hola,%20estoy%20interesado%20en%20el%20Servicio%20de%20Pruebas%20de%20Materiales" 
+                           class="btn btn-primary magnetic" 
+                           target="_blank"
+                           data-text-animate 
+                           data-delay="0.6">
                             <span>Solicitar Servicio</span>
                             <svg viewBox="0 0 13 10" height="10px" width="15px">
                                 <path d="M1,5 L11,5"></path>
@@ -376,7 +414,7 @@
     </section>
 
     <!-- Proceso de Servicio -->
-    <section class="service-process">
+    <!-- <section class="service-process">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-text-animate>Nuestro Proceso</h2>
@@ -430,7 +468,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Testimonios de Clientes -->
     <!-- <section class="service-testimonials">
@@ -505,7 +543,7 @@
     </section> -->
 
     <!-- CTA Section -->
-    <section class="service-cta">
+    <!-- <section class="service-cta">
         <div class="container">
             <div class="cta-content">
                 <h2 data-text-animate>¿Listo para experimentar la diferencia TECNOequip?</h2>
@@ -522,7 +560,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer Moderno -->
     <footer class="footer">
@@ -532,19 +570,17 @@
                     <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
                     <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61555813258959" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Enlaces rápidos</h3>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="about.html">Nosotros</a></li>
-                        <li><a href="services.html">Servicios</a></li>
                         <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="trainings.html">Cursos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -580,7 +616,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+                <p>&copy; 2025 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

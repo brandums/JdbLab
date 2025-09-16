@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Variables de estado
     let currentPage = 1;
-    const itemsPerPage = 6;
+    const itemsPerPage = 12;
     
     // Mostrar grupo de filtros solo cuando no es "Todos"
     document.querySelector('.jdb-filters').classList.remove('active');
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const card = document.createElement('div');
             card.className = 'equipment-card';
             card.innerHTML = `
-                <div class="equipment-image">
+                <div class="equipment-image" onclick="window.location.href='equipmentView.html?id=${equip.id}'">
                     <img src="${equip.imageUrl}" alt="${equip.name}">
                 </div>
                 <div class="equipment-info">

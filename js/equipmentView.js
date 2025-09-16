@@ -12,7 +12,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         window.location.href = 'equipment.html';
         return;
     }
-    
+
+    // Configurar el botón de WhatsApp
+            const whatsappButton = document.getElementById('whatsapp-button');
+            const whatsappMessage = `Hola, estoy interesado en solicitar una cotización para el producto: ${product.name} (ID: ${product.id}). Por favor, envíenme más información.`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Solo establecer el href de WhatsApp cuando se haga clic
+            whatsappButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(`https://wa.me/59177893463?text=${encodedMessage}`, '_blank');
+            });
+            
     // Mostrar los datos del producto
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('breadcrumb-product').textContent = product.name;

@@ -44,29 +44,40 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>Inicio</a></li>
                 <li><a href="equipment.html" class="active nav-link">Equipos</a></li>
-                <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="trainings.html" class="nav-link">Cursos</a></li>
                 <li><a href="contact.html" class="nav-link">Contacto</a></li>
-                <li><a href="trainings.html" class="nav-link">Capacitaciones</a></li>
+                
                 <li class="catalogo-dropdown" id="catalogoDropdown">
                     <button id="catalogoBtn" class="btn btn-nav magnetic dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="catalogoMenu">
-                        <span style="margin-right: 8px;">Catálogo</span>
+                        <span style="margin-right: 8px;">Descargas</span>
                         <i class="fa-solid fa-circle-down"></i>
                         <div class="btn-circle"></div>
                     </button>
 
                     <ul class="catalogo-menu" id="catalogoMenu" role="menu" aria-labelledby="catalogoBtn">
-                        <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab</a></li>
-                        <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip</a></li>
+                        <!-- Catálogos con submenú -->
+                        <li class="submenu">
+                        <a href="#" role="menuitem">Catálogos <i class="fa-solid fa-angle-right" style="float:right;"></i></a>
+                        <ul class="submenu-items">
+                            <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab (Física)</a></li>
+                            <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip (Ing. Civil)</a></li>
+                        </ul>
+                        </li>
+
+                        <!-- Otras opciones -->
+                        <li><a href="#" role="menuitem">Manuales</a></li>
+                        <li><a href="#" role="menuitem">Guías de laboratorio</a></li>
+                        <li><a href="#" role="menuitem">Publicaciones</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <section class="equipment-hero">
+    <!-- <section class="equipment-hero">
         <div class="equipment-hero-bg"></div>
         <div class="particles-js" id="particles-js"></div>
         <div class="equipment-hero-overlay"></div>
@@ -81,7 +92,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Breadcrumb -->
     <section style="display: none;" class="breadcrumb-section">
@@ -95,7 +106,7 @@
     </section>
 
     <!-- Product Detail Section -->
-    <section class="product-detail-section">
+    <section class="product-detail-section"  style="margin-top: 50px;">
         <div class="container">
             <div class="product-detail-grid">
                 <!-- Product Gallery -->
@@ -140,12 +151,9 @@
 
                     <!-- CTA Buttons -->
                     <div class="product-actions">
-                        <a href="contact.html" class="btn btn-primary magnetic">
+                        <!-- Cambia el href inicial a "javascript:void(0)" en lugar de "#" -->
+                        <a id="whatsapp-button" href="javascript:void(0)" class="btn btn-primary magnetic">
                             <span>Solicitar Cotización</span>
-                            <div class="btn-circle"></div>
-                        </a>
-                        <a href="equipment.html" class="btn btn-outline magnetic">
-                            <span>Ver más productos</span>
                             <div class="btn-circle"></div>
                         </a>
                     </div>
@@ -168,7 +176,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- <section class="cta-section">
         <div class="container">
             <div class="cta-content">
                 <h2>¿Necesitas asesoría técnica especializada?</h2>
@@ -178,7 +186,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer Moderno -->
     <footer class="footer">
@@ -188,19 +196,17 @@
                     <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
                     <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61555813258959" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Enlaces rápidos</h3>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="about.html">Nosotros</a></li>
-                        <li><a href="services.html">Servicios</a></li>
                         <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="trainings.html">Cursos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -236,7 +242,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+                <p>&copy; 2025 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

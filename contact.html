@@ -45,22 +45,33 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>Inicio</a></li>
                 <li><a href="equipment.html" class="nav-link">Equipos</a></li>
-                <li><a href="about.html" class="nav-link">Nosotros</a></li>
-                <li><a href="contact.html" class="nav-link active">Contacto</a></li>
-                <li><a href="trainings.html" class="nav-link">Capacitaciones</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="trainings.html" class="nav-link">Cursos</a></li>
+                <li><a href="contact.html" class="active nav-link">Contacto</a></li>
+                
                 <li class="catalogo-dropdown" id="catalogoDropdown">
                     <button id="catalogoBtn" class="btn btn-nav magnetic dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="catalogoMenu">
-                        <span style="margin-right: 8px;">Catálogo</span>
+                        <span style="margin-right: 8px;">Descargas</span>
                         <i class="fa-solid fa-circle-down"></i>
                         <div class="btn-circle"></div>
                     </button>
 
                     <ul class="catalogo-menu" id="catalogoMenu" role="menu" aria-labelledby="catalogoBtn">
-                        <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab</a></li>
-                        <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip</a></li>
+                        <!-- Catálogos con submenú -->
+                        <li class="submenu">
+                        <a href="#" role="menuitem">Catálogos <i class="fa-solid fa-angle-right" style="float:right;"></i></a>
+                        <ul class="submenu-items">
+                            <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab (Física)</a></li>
+                            <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip (Ing. Civil)</a></li>
+                        </ul>
+                        </li>
+
+                        <!-- Otras opciones -->
+                        <li><a href="#" role="menuitem">Manuales</a></li>
+                        <li><a href="#" role="menuitem">Guías de laboratorio</a></li>
+                        <li><a href="#" role="menuitem">Publicaciones</a></li>
                     </ul>
                 </li>
             </ul>
@@ -68,7 +79,7 @@
     </nav>
 
     <!-- Hero Section Contacto -->
-    <section class="contact-hero">
+    <!-- <section class="contact-hero">
         <div class="contact-hero-bg"></div>
         <div class="particles-js" id="particles-js"></div>
         <div class="contact-hero-overlay"></div>
@@ -84,16 +95,10 @@
                 </div>
             </div>
         </div>
-        
-        <!-- <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div> -->
-    </section>
+    </section> -->
 
     <!-- Contact Info Section -->
-    <section class="contact-info-section">
+    <section class="contact-info-section" style="margin-top: 50px;">
         <div class="container">
             <div class="contact-info-grid">
                 <div class="contact-info-card" data-text-animate>
@@ -113,7 +118,7 @@
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3>Teléfonos</h3>
-                    <p>(591) 70769521<br>(591) 77893463</p>
+                    <p>(591) 70769521<br>(591) 77893463 <i class="fab fa-whatsapp"></i></p>
                     <a href="tel:59170769521" class="contact-link">
                         <span>Llamar ahora</span>
                         <i class="fas fa-arrow-right"></i>
@@ -125,7 +130,7 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Correo Electrónico</h3>
-                    <p>servicios@tecnoequip.com.bo<br>ventas@tecnoequip.com.bo</p>
+                    <p>ventas@tecnoequip.com.bo</p>
                     <a href="mailto:servicios@tecnoequip.com.bo" class="contact-link">
                         <span>Enviar email</span>
                         <i class="fas fa-arrow-right"></i>
@@ -137,7 +142,7 @@
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Horario de Atención</h3>
-                    <p>Lunes a Viernes: 8:00 - 18:00<br>Sábados: 9:00 - 12:00</p>
+                    <p>Lunes a Viernes: 8:00AM - 12:30PM y de 3:30PM - 18:30PM<br>Sábados: 9:00AM - 13:30PM</p>
                     <a href="#contact-form" class="contact-link">
                         <span>Agendar cita</span>
                         <i class="fas fa-arrow-right"></i>
@@ -252,7 +257,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="contact-faq-section">
+    <!-- <section class="contact-faq-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-text-animate>Preguntas Frecuentes</h2>
@@ -311,10 +316,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
-    <section class="contact-cta-section">
+    <!-- <section class="contact-cta-section">
         <div class="container">
             <div class="cta-content">
                 <h2 data-text-animate>¿Necesitas una solución personalizada?</h2>
@@ -334,7 +339,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer Moderno -->
     <footer class="footer">
@@ -344,19 +349,17 @@
                     <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
                     <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61555813258959" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Enlaces rápidos</h3>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="about.html">Nosotros</a></li>
-                        <li><a href="services.html">Servicios</a></li>
                         <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="trainings.html">Cursos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -392,7 +395,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+                <p>&copy; 2025 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

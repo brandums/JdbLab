@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
     <title>Capacitaciones | TECNOequip - Equipamiento Educativo e Industrial</title>
+    <meta name="description" content="Equipos y laboratorios didácticos y técnicos para ingeniería civil, física, mecánica, hidráulica, refrigeración, suelos y materiales. Cursos y capacitaciones especializadas.">
+    <meta name="keywords" content="equipo, laboratorio, equipamiento, física, suelos, ingeniería civil, didáctico, ensayo, técnico, hidráulica, refrigeración, mecánica, materiales">
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/trainings.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -44,22 +49,33 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>Inicio</a></li>
                 <li><a href="equipment.html" class="nav-link">Equipos</a></li>
-                <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="trainings.html" class="active nav-link">Cursos</a></li>
                 <li><a href="contact.html" class="nav-link">Contacto</a></li>
-                <li><a href="trainings.html" class="nav-link active">Capacitaciones</a></li>
+                
                 <li class="catalogo-dropdown" id="catalogoDropdown">
                     <button id="catalogoBtn" class="btn btn-nav magnetic dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="catalogoMenu">
-                        <span style="margin-right: 8px;">Catálogo</span>
+                        <span style="margin-right: 8px;">Descargas</span>
                         <i class="fa-solid fa-circle-down"></i>
                         <div class="btn-circle"></div>
                     </button>
 
                     <ul class="catalogo-menu" id="catalogoMenu" role="menu" aria-labelledby="catalogoBtn">
-                        <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab</a></li>
-                        <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip</a></li>
+                        <!-- Catálogos con submenú -->
+                        <li class="submenu">
+                        <a href="#" role="menuitem">Catálogos <i class="fa-solid fa-angle-right" style="float:right;"></i></a>
+                        <ul class="submenu-items">
+                            <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab (Física)</a></li>
+                            <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip (Ing. Civil)</a></li>
+                        </ul>
+                        </li>
+
+                        <!-- Otras opciones -->
+                        <li><a href="#" role="menuitem">Manuales</a></li>
+                        <li><a href="#" role="menuitem">Guías de laboratorio</a></li>
+                        <li><a href="#" role="menuitem">Publicaciones</a></li>
                     </ul>
                 </li>
             </ul>
@@ -67,7 +83,7 @@
     </nav>
 
     <!-- Hero Section Capacitaciones -->
-    <section class="capacitaciones-hero">
+    <!-- <section class="capacitaciones-hero">
         <div class="capacitaciones-hero-bg"></div>
         <div class="particles-js" id="particles-js"></div>
         <div class="capacitaciones-hero-overlay"></div>
@@ -83,7 +99,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Capacitaciones Section -->
     <section class="capacitaciones-section">
@@ -104,7 +120,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="capacitaciones-cta-section">
+    <!-- <section class="capacitaciones-cta-section">
         <div class="container">
             <div class="capacitaciones-cta-content">
                 <h2 data-text-animate>¿Necesitas una capacitación personalizada?</h2>
@@ -116,7 +132,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Modal de Inscripción -->
     <div class="modal" id="inscription-modal">
@@ -158,20 +174,17 @@
                     <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
                     <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61555813258959" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Enlaces rápidos</h3>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="about.html">Nosotros</a></li>
-                        <li><a href="services.html">Servicios</a></li>
                         <li><a href="equipment.html">Equipos</a></li>
-                        <li><a href="capacitaciones.html">Capacitaciones</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="trainings.html">Cursos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -207,11 +220,10 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+                <p>&copy; 2025 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>

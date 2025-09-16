@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TECNOequip - Innovación en Equipamiento Educativo e Industrial</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,22 +48,33 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active nav-link">Inicio</a></li>
-                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="index.html" class="active nav-link"><i class="fa-solid fa-house" style="margin-right: 8px;"></i>Inicio</a></li>
                 <li><a href="equipment.html" class="nav-link">Equipos</a></li>
-                <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="trainings.html" class="nav-link">Cursos</a></li>
                 <li><a href="contact.html" class="nav-link">Contacto</a></li>
-                <li><a href="trainings.html" class="nav-link">Capacitaciones</a></li>
+                
                 <li class="catalogo-dropdown" id="catalogoDropdown">
                     <button id="catalogoBtn" class="btn btn-nav magnetic dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="catalogoMenu">
-                        <span style="margin-right: 8px;">Catálogo</span>
+                        <span style="margin-right: 8px;">Descargas</span>
                         <i class="fa-solid fa-circle-down"></i>
                         <div class="btn-circle"></div>
                     </button>
 
                     <ul class="catalogo-menu" id="catalogoMenu" role="menu" aria-labelledby="catalogoBtn">
-                        <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab</a></li>
-                        <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip</a></li>
+                        <!-- Catálogos con submenú -->
+                        <li class="submenu">
+                        <a href="#" role="menuitem">Catálogos <i class="fa-solid fa-angle-right" style="float:right;"></i></a>
+                        <ul class="submenu-items">
+                            <li><a href="JDBLab.pdf" download="JDBLab.pdf" role="menuitem">JDBLab (Física)</a></li>
+                            <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip (Ing. Civil)</a></li>
+                        </ul>
+                        </li>
+
+                        <!-- Otras opciones -->
+                        <li><a href="#" role="menuitem">Manuales</a></li>
+                        <li><a href="#" role="menuitem">Guías de laboratorio</a></li>
+                        <li><a href="#" role="menuitem">Publicaciones</a></li>
                     </ul>
                 </li>
             </ul>
@@ -77,11 +89,11 @@
         
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Innovación en Equipamiento Educativo e Industrial</h1>
-                <p class="hero-subtitle">Soluciones técnicas de vanguardia para laboratorios e ingeniería civil</p>
+                <h1 class="hero-title">Equipamiento Educativo y de Ingeniería</h1>
+                <p class="hero-subtitle">Fabricación de Equipos técnicos y didácticos, para universidades, institutos y colegios</p>
                 <div class="hero-buttons">
-                    <a href="services.html" class="btn btn-primary magnetic">
-                        <span>Explorar Servicios</span>
+                    <a href="equipment.html" class="btn btn-primary magnetic">
+                        <span>Equipos</span>
                         <div class="btn-circle"></div>
                     </a>
                     <a href="contact.html" class="btn btn-secondary magnetic">
@@ -92,14 +104,14 @@
             </div>
         </div>
 
-        <div class="hero-scroll">
+        <!-- <div class="hero-scroll">
             <div class="scroll-downs">
                 <div class="mousey">
                     <div class="scroller"></div>
                 </div>
                 <p>Desplázate</p>
             </div>
-        </div>
+        </div> -->
 
         <!-- <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -118,9 +130,9 @@
 
             <div class="about-grid">
                 <div class="about-content">
-                    <p>Desde 1998, hemos estado comprometidos con la educación técnica y científica, proporcionando equipos de laboratorio de alta calidad para instituciones educativas y profesionales de la ingeniería civil.</p>
+                    <p>La única empresa en la fabricación didacticos y de ingeniería en Bolivia.</p>
                     
-                    <div class="stats-grid">
+                    <!-- <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-icon">
                                 <i class="fas fa-calendar-alt"></i>
@@ -153,7 +165,7 @@
                     <a href="about.html" class="btn btn-outline magnetic">
                         <span>Nuestra Historia</span>
                         <div class="btn-circle"></div>
-                    </a>
+                    </a> -->
                 </div>
 
                 <div class="about-image">
@@ -168,7 +180,7 @@
     </section>
 
     <!-- Servicios con Efecto Hover 3D -->
-    <section class="services-section">
+    <!-- <section class="services-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Nuestros Servicios Especializados</h2>
@@ -225,6 +237,28 @@
                         </svg>
                     </a>
                     <div class="hover-effect"></div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="mission-vision-section">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card mission-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 data-text-animate>Misión</h3>
+                    <p data-text-animate data-delay="0.1">Ofrecer soluciones prácticas para la enseñanza de Ciencias e Ingeniería mediante equipos didácticos accesibles y de calidad, junto a servicios de capacitación, calibración y soporte. Proveemos equipos para ensayos de materiales y pruebas industriales, respondiendo a las demandas de proyectos en Ingeniería Civil y otras áreas técnicas.</p>
+                </div>
+                
+                <div class="mv-card vision-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 data-text-animate>Visión</h3>
+                    <p data-text-animate data-delay="0.1">Ser un referente en la fabricación de equipamiento educativo e industrial, reconocido por la innovación, calidad y confiabilidad, contribuyendo a una formación práctica y aplicada que prepare a personas capaces de enfrentar desafíos reales.</p>
                 </div>
             </div>
         </div>
@@ -303,7 +337,7 @@
     </section> -->
 
     <!-- CTA con Efecto de Degradado Animado -->
-    <section class="cta-section">
+    <!-- <section class="cta-section">
         <div class="container">
             <div class="cta-content">
                 <h2>¿Listo para llevar tu institución al siguiente nivel?</h2>
@@ -313,7 +347,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer Moderno -->
     <footer class="footer">
@@ -323,19 +357,17 @@
                     <img src="img/logo.png" alt="TECNOequip Logo" class="footer-logo">
                     <p>Líderes en fabricación de equipamiento educativo e industrial en Bolivia desde 1998.</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61555813258959" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Enlaces rápidos</h3>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="about.html">Nosotros</a></li>
-                        <li><a href="services.html">Servicios</a></li>
                         <li><a href="equipment.html">Equipos</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="trainings.html">Cursos</a></li>
                         <li><a href="contact.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -371,7 +403,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
+                <p>&copy; 2025 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
