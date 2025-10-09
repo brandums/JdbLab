@@ -200,7 +200,7 @@
 }
 
 .mv-card p {
-    color: var(--text-light);
+    color: black;
     line-height: 1.8;
 }
 
