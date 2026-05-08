@@ -209,9 +209,9 @@
     transition: transform 0.5s ease;
 }
 
-.equipment-card:hover .equipment-image img {
+/* .equipment-card:hover .equipment-image img {
     transform: scale(1.05);
-}
+} */
 
 .equipment-info {
     padding: 20px;

@@ -221,39 +221,6 @@ function openImagePopup(images, startIndex = 0, productName = '') {
     closeBtn.className = 'close-popup';
     closeBtn.innerHTML = '✕';
     closeBtn.setAttribute('aria-label', 'Cerrar');
-    closeBtn.style.cssText = `
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        z-index: 10001;
-        font-family: Arial, sans-serif;
-    `;
-    
-    closeBtn.addEventListener('mouseenter', () => {
-        closeBtn.style.background = 'rgba(255, 255, 255, 0.9)';
-        closeBtn.style.color = 'black';
-        closeBtn.style.transform = 'scale(1.1)';
-    });
-    
-    closeBtn.addEventListener('mouseleave', () => {
-        closeBtn.style.background = 'rgba(0, 0, 0, 0.7)';
-        closeBtn.style.color = 'white';
-        closeBtn.style.transform = 'scale(1)';
-    });
     
     content.appendChild(closeBtn);
     content.appendChild(img);
@@ -292,71 +259,15 @@ function openImagePopup(images, startIndex = 0, productName = '') {
         prevBtn.className = 'nav-popup prev';
         prevBtn.innerHTML = '❮';
         prevBtn.setAttribute('aria-label', 'Imagen anterior');
-        prevBtn.style.cssText = `
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            z-index: 10001;
-        `;
         
         const nextBtn = document.createElement('div');
         nextBtn.className = 'nav-popup next';
         nextBtn.innerHTML = '❯';
         nextBtn.setAttribute('aria-label', 'Imagen siguiente');
-        nextBtn.style.cssText = `
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            z-index: 10001;
-        `;
         
         const counter = document.createElement('div');
         counter.className = 'popup-counter';
         counter.textContent = `${currentIndex + 1} / ${totalImages}`;
-        counter.style.cssText = `
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-family: monospace;
-            z-index: 10001;
-            backdrop-filter: blur(5px);
-        `;
         
         content.appendChild(prevBtn);
         content.appendChild(nextBtn);
@@ -384,26 +295,6 @@ function openImagePopup(images, startIndex = 0, productName = '') {
             if (newIndex >= totalImages) newIndex = 0;
             updateImage(newIndex);
         });
-        
-        prevBtn.addEventListener('mouseenter', () => {
-            prevBtn.style.background = 'rgba(255, 255, 255, 0.9)';
-            prevBtn.style.color = 'black';
-        });
-        
-        prevBtn.addEventListener('mouseleave', () => {
-            prevBtn.style.background = 'rgba(0, 0, 0, 0.7)';
-            prevBtn.style.color = 'white';
-        });
-        
-        nextBtn.addEventListener('mouseenter', () => {
-            nextBtn.style.background = 'rgba(255, 255, 255, 0.9)';
-            nextBtn.style.color = 'black';
-        });
-        
-        nextBtn.addEventListener('mouseleave', () => {
-            nextBtn.style.background = 'rgba(0, 0, 0, 0.7)';
-            nextBtn.style.color = 'white';
-        });
     }
     
     closeBtn.addEventListener('click', (e) => {
@@ -418,43 +309,6 @@ function openImagePopup(images, startIndex = 0, productName = '') {
     });
     
     overlay.appendChild(content);
-    
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(8px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        cursor: pointer;
-    `;
-    
-    content.style.cssText = `
-        position: relative;
-        max-width: 90%;
-        max-height: 90%;
-        background: transparent;
-        border-radius: 16px;
-        overflow: hidden;
-        animation: zoomIn 0.3s ease;
-        cursor: default;
-    `;
-    
-    img.style.cssText = `
-        max-width: 100%;
-        max-height: 90vh;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        display: block;
-        border-radius: 12px;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    `;
     
     document.body.appendChild(overlay);
     

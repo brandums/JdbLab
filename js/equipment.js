@@ -67,13 +67,6 @@ function generarCategoryTabs(categorias) {
     
     categoryTabsContainer.innerHTML = '';
     
-    // Agregar botón "Todos"
-    const allTab = document.createElement('button');
-    allTab.className = 'category-tab';
-    allTab.dataset.category = 'all';
-    allTab.textContent = '📋 Todos los Equipos';
-    categoryTabsContainer.appendChild(allTab);
-    
     // Obtener categorías únicas
     const categoriasUnicas = [...new Map(categorias.map(item => [item.categoria, item])).values()];
     
@@ -84,13 +77,6 @@ function generarCategoryTabs(categorias) {
         tab.textContent = cat.categoriaNombre;
         categoryTabsContainer.appendChild(tab);
     });
-    
-    // Si hay categorías, activar la primera
-    if (categoriasUnicas.length > 0) {
-        allTab.classList.remove('active');
-        const firstTab = categoryTabsContainer.querySelector('.category-tab:not([data-category="all"])');
-        if (firstTab) firstTab.classList.add('active');
-    }
 }
 
 // Generar filtros de subcategorías dinámicamente
@@ -203,15 +189,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                     group.classList.remove('active');
                 });
                 
-                if (category !== 'all') {
-                    const targetGroup = document.querySelector(`.${category}-filters`);
-                    if (targetGroup) {
-                        targetGroup.classList.add('active');
-                        // Activar el botón "Todos" de esta categoría
-                        targetGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                        const allBtn = targetGroup.querySelector('.filter-btn[data-subcategory^="all"]');
-                        if (allBtn) allBtn.classList.add('active');
-                    }
+                const targetGroup = document.querySelector(`.${category}-filters`);
+                if (targetGroup) {
+                    targetGroup.classList.add('active');
+                    // Activar el botón "Todos" de esta categoría
+                    targetGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    const allBtn = targetGroup.querySelector('.filter-btn[data-subcategory^="all"]');
+                    if (allBtn) allBtn.classList.add('active');
                 }
                 
                 filterEquipment();
@@ -243,7 +227,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Función para filtrar y mostrar equipos
     function filterEquipment() {
         const activeCategoryTab = document.querySelector('.category-tab.active');
-        const activeCategory = activeCategoryTab ? activeCategoryTab.dataset.category : 'all';
+        const activeCategory = activeCategoryTab ? activeCategoryTab.dataset.category : '';
         
         const activeSubcategoryBtn = document.querySelector('.filter-group.active .filter-btn.active');
         const activeSubcategory = activeSubcategoryBtn ? activeSubcategoryBtn.dataset.subcategory : '';
@@ -253,12 +237,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         let filteredEquipment = equipmentData;
         
         // Filtrar por categoría
-        if (activeCategory && activeCategory !== 'all') {
+        if (activeCategory) {
             filteredEquipment = filteredEquipment.filter(equip => equip.category === activeCategory);
         }
         
         // Filtrar por subcategoría
-        if (activeCategory && activeCategory !== 'all' && activeSubcategory && !activeSubcategory.startsWith('all')) {
+        if (activeCategory && activeSubcategory && !activeSubcategory.startsWith('all')) {
             filteredEquipment = filteredEquipment.filter(equip => equip.subcategory === activeSubcategory);
         }
         
