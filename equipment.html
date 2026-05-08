@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipos | TECNOequip - Equipamiento Educativo e Industrial</title>
-    <!-- Incluye los mismos estilos y scripts que en las otras páginas -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/equipment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,14 +25,14 @@
             </div>
         </div>
     </div>
-
+    
     <!-- WhatsApp Float -->
     <a href="https://wa.me/59170769521" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
     </a>
-
-     <!-- Navbar -->
+    
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -57,9 +56,7 @@
                         <i class="fa-solid fa-circle-down"></i>
                         <div class="btn-circle"></div>
                     </button>
-
                     <ul class="catalogo-menu" id="catalogoMenu" role="menu" aria-labelledby="catalogoBtn">
-                        <!-- Catálogos con submenú -->
                         <li class="submenu">
                         <a href="#" role="menuitem"><i class="fa-solid fa-angle-left" style="margin-right: 8px;"></i>Catálogos</a>
                         <ul class="submenu-items">
@@ -67,8 +64,6 @@
                             <li><a href="TecnoEquip.docx" download="TecnoEquip.docx" role="menuitem">TecnoEquip (Ing. Civil)</a></li>
                         </ul>
                         </li>
-
-                        <!-- Otras opciones -->
                         <li><a href="#" role="menuitem">Manuales</a></li>
                         <li><a href="#" role="menuitem">Guías de laboratorio</a></li>
                         <li><a href="#" role="menuitem">Publicaciones</a></li>
@@ -78,70 +73,26 @@
         </div>
     </nav>
     
-    <!-- Hero Section específica para Equipos -->
-    <!-- <section class="equipment-hero">
-        <div class="equipment-hero-bg"></div>
-        <div class="particles-js" id="particles-js"></div>
-        <div class="equipment-hero-overlay"></div>
-        
-        <div class="container">
-            <div class="equipment-hero-content">
-                <h1 class="equipment-hero-title" data-text-animate>Nuestros Equipos</h1>
-                <p class="equipment-hero-subtitle" data-text-animate data-delay="0.3">Tecnología especializada para educación e ingeniería</p>
-                <div class="equipment-hero-breadcrumb">
-                    <a href="index.html">Inicio</a>
-                    <span>/</span>
-                    <a href="equipment.html" class="active">Equipos</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Sección de Categorías -->
     <section class="categories-section">
         <div class="container">
-            <!-- <div class="section-header">
-                <h2 class="section-title" data-text-animate>Explora Nuestros Equipos</h2>
-                <p class="section-subtitle" data-text-animate data-delay="0.1">Selecciona una categoría para ver los equipos disponibles</p>
-            </div> -->
-            
             <div class="search-and-filters" style="margin-top: 30px;">
                 <div class="equipment-search-container">
                     <input type="text" id="equipment-search" placeholder="Buscar equipos...">
                     <i class="fas fa-search"></i>
                 </div>
             </div>
-
-            <!-- Pestañas de categorías principales -->
+            
+            <!-- Pestañas de categorías principales (se generan dinámicamente) -->
             <div class="category-tabs">
-                <!-- <button class="category-tab" data-category="all">Todos los Equipos</button> -->
-                <button class="category-tab active" data-category="jdb">🧪 Equipos JDBLab (Física)</button>
-                <button class="category-tab" data-category="tecno">🏗️ Equipos TecnoEquip (Ingeniería Civil)</button>
+                <!-- Se llenarán dinámicamente desde equipment-dynamic.js -->
             </div>
             
-            <!-- Filtros por subcategoría -->
+            <!-- Filtros por subcategoría (se generan dinámicamente) -->
             <div class="subcategory-filters">
-                <div class="filter-group jdb-filters">
-                    <button class="filter-btn active" data-subcategory="all-fisica">Todos</button>
-                    <button class="filter-btn" data-subcategory="fisica1">Física I</button>
-                    <button class="filter-btn" data-subcategory="fisica2">Física II</button>
-                    <button class="filter-btn" data-subcategory="fisica3">Física III</button>
-                </div>
-                
-                <div class="filter-group tecno-filters">
-                    <button class="filter-btn active" data-subcategory="all-civil">Todos</button>
-                    <button class="filter-btn" data-subcategory="suelos-campo">Suelos de Campo</button>
-                    <button class="filter-btn" data-subcategory="suelos-lab">Suelos de Laboratorio</button>
-                    <button class="filter-btn" data-subcategory="asfalto">Asfalto</button>
-                    <button class="filter-btn" data-subcategory="concreto">Concreto</button>
-                    <button class="filter-btn" data-subcategory="cemento">Cemento</button>
-                    <button class="filter-btn" data-subcategory="agregado">Agregado</button>
-                    <button class="filter-btn" data-subcategory="general">Equipo General</button>
-                </div>
+                <!-- Se llenarán dinámicamente desde equipment-dynamic.js -->
             </div>
-
             
-
             <!-- Contador de resultados -->
             <div class="results-counter">
                 Mostrando <span id="results-count">0</span> equipos
@@ -158,24 +109,11 @@
                 <h3>No se encontraron equipos</h3>
                 <p>Intenta con otros filtros de búsqueda</p>
             </div>
-
+            
             <div class="pagination" id="pagination"></div>
         </div>
     </section>
-
-    <!-- CTA con Efecto de Degradado Animado -->
-    <!-- <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>¿Listo para llevar tu institución al siguiente nivel?</h2>
-                <p>Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus objetivos educativos y técnicos.</p>
-                <a href="contact.html" class="btn btn-primary btn-large magnetic">
-                    <span>Solicitar Cotización</span>
-                </a>
-            </div>
-        </div>
-    </section> -->
-
+    
     <!-- Footer Moderno -->
     <footer class="footer">
         <div class="container">
@@ -227,7 +165,6 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; 2025 TECNOequip. Brandum'Soft, todos los derechos reservados.</p>
@@ -238,8 +175,9 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/equipment-data.js"></script> <!-- Datos de los equipos -->
-    <script src="js/equipment.js"></script> <!-- Lógica de filtrado -->
+    <!-- <script src="js/equipment-data.js"></script> -->
+    <!-- CAMBIO IMPORTANTE: Usar equipment-dynamic.js en lugar de equipment.js -->
+    <script src="js/equipment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </body>
 </html>

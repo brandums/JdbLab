@@ -1368,3 +1368,31 @@ a {
 .catalogo-dropdown .submenu:hover .submenu-items {
   display: block;
 }
+
+
+
+
+
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 25px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 120px;
+    }
+}
+
+.navbar .container {
+    padding: 0 25px;
+}
+
+@media (min-width: 1200px) {
+    .navbar .container {
+        padding: 0 120px;
+    }
+}
