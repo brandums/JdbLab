@@ -11,7 +11,6 @@ async function getEquipmentData() {
         if (!response.ok) throw new Error('Error al cargar productos');
         const data = await response.json();
         
-        // Transformamos los datos para mantener la estructura esperada
         return data.map(item => ({
             id: Number(item.id),
             name: item.name,
@@ -41,55 +40,120 @@ async function getCategorias() {
         return data;
     } catch (error) {
         console.error('Error cargando categorías:', error);
-        // Fallback a categorías hardcodeadas en caso de error
         return [
-            { categoria: 'jdb', categoriaNombre: '🧪 Equipos JDBLab (Física)', subcategoria: 'fisica1', subcategoriaNombre: 'Física I', orden: 1 },
-            { categoria: 'jdb', categoriaNombre: '🧪 Equipos JDBLab (Física)', subcategoria: 'fisica2', subcategoriaNombre: 'Física II', orden: 2 },
-            { categoria: 'jdb', categoriaNombre: '🧪 Equipos JDBLab (Física)', subcategoria: 'fisica3', subcategoriaNombre: 'Física III', orden: 3 },
-            { categoria: 'tecno', categoriaNombre: '🏗️ Equipos TecnoEquip (Ingeniería Civil)', subcategoria: 'suelos-campo', subcategoriaNombre: 'Suelos de Campo', orden: 1 },
-            { categoria: 'tecno', categoriaNombre: '🏗️ Equipos TecnoEquip (Ingeniería Civil)', subcategoria: 'suelos-lab', subcategoriaNombre: 'Suelos de Laboratorio', orden: 2 },
-            { categoria: 'tecno', categoriaNombre: '🏗️ Equipos TecnoEquip (Ingeniería Civil)', subcategoria: 'asfalto', subcategoriaNombre: 'Asfalto', orden: 3 },
-            { categoria: 'tecno', categoriaNombre: '🏗️ Equipos TecnoEquip (Ingeniería Civil)', subcategoria: 'concreto', subcategoriaNombre: 'Concreto', orden: 4 },
-            { categoria: 'tecno', categoriaNombre: '🏗️ Equipos TecnoEquip (Ingeniería Civil)', subcategoria: 'cemento', subcategoriaNombre: 'Cemento', orden: 5 },
-            { categoria: 'tecno', categoriaNombre: '🏗️ Equipos TecnoEquip (Ingeniería Civil)', subcategoria: 'agregado', subcategoriaNombre: 'Agregado', orden: 6 },
-            { categoria: 'tecno', categoriaNombre: '🏗️ Equipos TecnoEquip (Ingeniería Civil)', subcategoria: 'general', subcategoriaNombre: 'Equipo General', orden: 7 }
+            { categoria: 'jdb', categoriaNombre: '🧪 JDBLab (Física)', subcategoria: 'fisica1', subcategoriaNombre: 'Física I', orden: 1 },
+            { categoria: 'jdb', categoriaNombre: '🧪 JDBLab (Física)', subcategoria: 'fisica2', subcategoriaNombre: 'Física II', orden: 2 },
+            { categoria: 'jdb', categoriaNombre: '🧪 JDBLab (Física)', subcategoria: 'fisica3', subcategoriaNombre: 'Física III', orden: 3 },
+            { categoria: 'tecno', categoriaNombre: '🏗️ TecnoEquip (Ing. Civil)', subcategoria: 'suelos-campo', subcategoriaNombre: 'Suelos de Campo', orden: 1 },
+            { categoria: 'tecno', categoriaNombre: '🏗️ TecnoEquip (Ing. Civil)', subcategoria: 'suelos-lab', subcategoriaNombre: 'Suelos de Laboratorio', orden: 2 },
+            { categoria: 'tecno', categoriaNombre: '🏗️ TecnoEquip (Ing. Civil)', subcategoria: 'asfalto', subcategoriaNombre: 'Asfalto', orden: 3 },
+            { categoria: 'tecno', categoriaNombre: '🏗️ TecnoEquip (Ing. Civil)', subcategoria: 'concreto', subcategoriaNombre: 'Concreto', orden: 4 },
+            { categoria: 'tecno', categoriaNombre: '🏗️ TecnoEquip (Ing. Civil)', subcategoria: 'cemento', subcategoriaNombre: 'Cemento', orden: 5 },
+            { categoria: 'tecno', categoriaNombre: '🏗️ TecnoEquip (Ing. Civil)', subcategoria: 'agregado', subcategoriaNombre: 'Agregado', orden: 6 },
+            { categoria: 'tecno', categoriaNombre: '🏗️ TecnoEquip (Ing. Civil)', subcategoria: 'general', subcategoriaNombre: 'Equipo General', orden: 7 }
         ];
     }
 }
 
-// Generar tabs de categorías dinámicamente
-function generarCategoryTabs(categorias) {
-    const categoryTabsContainer = document.querySelector('.category-tabs');
-    if (!categoryTabsContainer) {
-        console.error('No se encontró .category-tabs');
-        return;
-    }
+// Generar dropdown de categorías
+function generarCategoryDropdown(categorias) {
+    const categorySelector = document.querySelector('.category-selector');
+    if (!categorySelector) return;
     
-    categoryTabsContainer.innerHTML = '';
-    
-    // Obtener categorías únicas
     const categoriasUnicas = [...new Map(categorias.map(item => [item.categoria, item])).values()];
     
-    categoriasUnicas.forEach((cat, index) => {
-        const tab = document.createElement('button');
-        tab.className = `category-tab ${index === 0 ? 'active' : ''}`;
-        tab.dataset.category = cat.categoria;
-        tab.textContent = cat.categoriaNombre;
-        categoryTabsContainer.appendChild(tab);
+    const dropdownHTML = `
+        <div class="category-dropdown" id="categoryDropdown">
+            <div class="category-dropdown-header">
+                <span>${categoriasUnicas[0].categoriaNombre}</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="category-dropdown-backdrop"></div>
+            <div class="category-dropdown-menu">
+                ${categoriasUnicas.map(cat => `
+                    <div class="category-dropdown-item ${categoriasUnicas.indexOf(cat) === 0 ? 'active' : ''}" 
+                         data-category="${cat.categoria}">
+                        ${cat.categoriaNombre}
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    categorySelector.innerHTML = dropdownHTML;
+    initializeDropdown();
+}
+
+// Inicializar el comportamiento del dropdown
+function initializeDropdown() {
+    const dropdown = document.getElementById('categoryDropdown');
+    if (!dropdown) return;
+    
+    const header = dropdown.querySelector('.category-dropdown-header');
+    const backdrop = dropdown.querySelector('.category-dropdown-backdrop');
+    const items = dropdown.querySelectorAll('.category-dropdown-item');
+    
+    header.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+    });
+    
+    backdrop.addEventListener('click', function() {
+        dropdown.classList.remove('open');
+    });
+    
+    items.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            items.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            
+            const headerSpan = header.querySelector('span');
+            headerSpan.textContent = this.textContent.trim();
+            
+            dropdown.classList.remove('open');
+            
+            const category = this.dataset.category;
+            document.querySelectorAll('.filter-group').forEach(group => {
+                group.classList.remove('active');
+            });
+            
+            const targetGroup = document.querySelector(`.${category}-filters`);
+            if (targetGroup) {
+                targetGroup.classList.add('active');
+                targetGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                const allBtn = targetGroup.querySelector('.filter-btn[data-subcategory^="all"]');
+                if (allBtn) allBtn.classList.add('active');
+            }
+            
+            if (typeof filterEquipment === 'function') {
+                currentPage = 1;
+                filterEquipment();
+            }
+        });
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+            dropdown.classList.remove('open');
+        }
     });
 }
 
-// Generar filtros de subcategorías dinámicamente
+// Generar filtros de subcategorías
 function generarSubcategoryFilters(categorias) {
     const subcategoryFiltersContainer = document.querySelector('.subcategory-filters');
-    if (!subcategoryFiltersContainer) {
-        console.error('No se encontró .subcategory-filters');
-        return;
-    }
+    if (!subcategoryFiltersContainer) return;
     
     subcategoryFiltersContainer.innerHTML = '';
     
-    // Agrupar por categoría
     const categoriaAgrupada = categorias.reduce((acc, cat) => {
         if (!acc[cat.categoria]) {
             acc[cat.categoria] = [];
@@ -98,22 +162,23 @@ function generarSubcategoryFilters(categorias) {
         return acc;
     }, {});
     
-    // Crear grupos de filtros para cada categoría
     Object.keys(categoriaAgrupada).forEach((catKey, index) => {
         const filterGroup = document.createElement('div');
         filterGroup.className = `filter-group ${catKey}-filters ${index === 0 ? 'active' : ''}`;
         
-        // Botón "Todos"
+        const filterLabel = document.createElement('span');
+        filterLabel.className = 'filter-label';
+        filterLabel.textContent = 'Filtrar:';
+        filterGroup.appendChild(filterLabel);
+        
         const allBtn = document.createElement('button');
         allBtn.className = 'filter-btn active';
         allBtn.dataset.subcategory = `all-${catKey}`;
         allBtn.textContent = 'Todos';
         filterGroup.appendChild(allBtn);
         
-        // Ordenar subcategorías por orden
         const subcategorias = categoriaAgrupada[catKey].sort((a, b) => a.orden - b.orden);
         
-        // Crear botones de subcategorías
         subcategorias.forEach(subcat => {
             const btn = document.createElement('button');
             btn.className = 'filter-btn';
@@ -126,13 +191,11 @@ function generarSubcategoryFilters(categorias) {
     });
 }
 
-// Función auxiliar para obtener nombre de subcategoría
 function getSubcategoryName(subcategory) {
     const subcat = categoriasData.find(c => c.subcategoria === subcategory);
     return subcat ? subcat.subcategoriaNombre : subcategory;
 }
 
-// Función auxiliar para obtener nombre de categoría
 function getCategoryName(category) {
     const cat = categoriasData.find(c => c.categoria === category);
     return cat ? cat.categoriaNombre : category;
@@ -142,25 +205,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     console.log('🚀 Iniciando carga de equipos...');
     
     try {
-        // Cargar datos del backend
-        console.log('📡 Cargando categorías...');
         categoriasData = await getCategorias();
         console.log('✅ Categorías cargadas:', categoriasData.length);
         
-        console.log('📡 Cargando productos...');
         equipmentData = await getEquipmentData();
         console.log('✅ Productos cargados:', equipmentData.length);
         
-        // Generar UI dinámica
-        generarCategoryTabs(categoriasData);
+        generarCategoryDropdown(categoriasData);
         generarSubcategoryFilters(categoriasData);
         
     } catch (error) {
         console.error('❌ Error en la inicialización:', error);
     }
     
-    // Elementos del DOM
-    const categoryTabsContainer = document.querySelector('.category-tabs');
     const subcategoryFiltersContainer = document.querySelector('.subcategory-filters');
     const equipmentGrid = document.getElementById('equipment-grid');
     const noResults = document.getElementById('no-results');
@@ -168,42 +225,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     const searchInput = document.getElementById('equipment-search');
     const paginationContainer = document.getElementById('pagination');
     
-    // Variables de estado
     let currentPage = 1;
     const itemsPerPage = 12;
     
-    // Manejar clic en pestañas de categoría (usar delegación de eventos)
-    if (categoryTabsContainer) {
-        categoryTabsContainer.addEventListener('click', function(e) {
-            if (e.target.classList.contains('category-tab')) {
-                currentPage = 1;
-                
-                // Actualizar tabs
-                categoryTabsContainer.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
-                e.target.classList.add('active');
-                
-                const category = e.target.dataset.category;
-                
-                // Mostrar/ocultar filtros de subcategoría
-                document.querySelectorAll('.filter-group').forEach(group => {
-                    group.classList.remove('active');
-                });
-                
-                const targetGroup = document.querySelector(`.${category}-filters`);
-                if (targetGroup) {
-                    targetGroup.classList.add('active');
-                    // Activar el botón "Todos" de esta categoría
-                    targetGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                    const allBtn = targetGroup.querySelector('.filter-btn[data-subcategory^="all"]');
-                    if (allBtn) allBtn.classList.add('active');
-                }
-                
-                filterEquipment();
-            }
-        });
-    }
-    
-    // Manejar clic en botones de filtro (delegación de eventos)
     if (subcategoryFiltersContainer) {
         subcategoryFiltersContainer.addEventListener('click', function(e) {
             if (e.target.classList.contains('filter-btn')) {
@@ -216,7 +240,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
     
-    // Buscador
     if (searchInput) {
         searchInput.addEventListener('input', function() {
             currentPage = 1;
@@ -224,10 +247,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
     
-    // Función para filtrar y mostrar equipos
     function filterEquipment() {
-        const activeCategoryTab = document.querySelector('.category-tab.active');
-        const activeCategory = activeCategoryTab ? activeCategoryTab.dataset.category : '';
+        const activeCategoryItem = document.querySelector('.category-dropdown-item.active');
+        const activeCategory = activeCategoryItem ? activeCategoryItem.dataset.category : '';
         
         const activeSubcategoryBtn = document.querySelector('.filter-group.active .filter-btn.active');
         const activeSubcategory = activeSubcategoryBtn ? activeSubcategoryBtn.dataset.subcategory : '';
@@ -236,17 +258,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         let filteredEquipment = equipmentData;
         
-        // Filtrar por categoría
         if (activeCategory) {
             filteredEquipment = filteredEquipment.filter(equip => equip.category === activeCategory);
         }
         
-        // Filtrar por subcategoría
         if (activeCategory && activeSubcategory && !activeSubcategory.startsWith('all')) {
             filteredEquipment = filteredEquipment.filter(equip => equip.subcategory === activeSubcategory);
         }
         
-        // Filtrar por búsqueda
         if (searchTerm) {
             filteredEquipment = filteredEquipment.filter(equip => 
                 equip.name.toLowerCase().includes(searchTerm) || 
@@ -285,7 +304,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <img src="${equip.imageUrl}" alt="${equip.name}" onerror="this.src='img/noimage.avif'">
                 </div>
                 <div class="equipment-info">
-                    <h3 class="equipment-name" style="cursor: pointer;" onclick="window.location.href='equipmentView.html?id=${equip.id}'">${equip.name}</h3>
+                    <span class="equipment-category">${getSubcategoryName(equip.subcategory)}</span>
+                    <h3 class="equipment-name" onclick="window.location.href='equipmentView.html?id=${equip.id}'">${equip.name}</h3>
                     <p class="equipment-description">${equip.description}</p>
                     <a href="equipmentView.html?id=${equip.id}" class="equipment-details-btn">
                         Ver detalles
@@ -312,23 +332,30 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentPage > 1) {
             const prevBtn = document.createElement('button');
             prevBtn.className = 'pagination-btn';
-            prevBtn.innerHTML = '&laquo; Anterior';
+            prevBtn.innerHTML = '&laquo;';
             prevBtn.addEventListener('click', () => {
                 currentPage--;
                 filterEquipment();
-                window.scrollTo({top: equipmentGrid.offsetTop - 100, behavior: 'smooth'});
+                window.scrollTo({top: equipmentGrid.offsetTop - 80, behavior: 'smooth'});
             });
             paginationContainer.appendChild(prevBtn);
         }
         
-        for (let i = 1; i <= pageCount; i++) {
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(pageCount, startPage + 4);
+        
+        if (endPage - startPage < 4) {
+            startPage = Math.max(1, endPage - 4);
+        }
+        
+        for (let i = startPage; i <= endPage; i++) {
             const pageBtn = document.createElement('button');
             pageBtn.className = `pagination-btn ${i === currentPage ? 'active' : ''}`;
             pageBtn.textContent = i;
             pageBtn.addEventListener('click', () => {
                 currentPage = i;
                 filterEquipment();
-                window.scrollTo({top: equipmentGrid.offsetTop - 100, behavior: 'smooth'});
+                window.scrollTo({top: equipmentGrid.offsetTop - 80, behavior: 'smooth'});
             });
             paginationContainer.appendChild(pageBtn);
         }
@@ -336,16 +363,17 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentPage < pageCount) {
             const nextBtn = document.createElement('button');
             nextBtn.className = 'pagination-btn';
-            nextBtn.innerHTML = 'Siguiente &raquo;';
+            nextBtn.innerHTML = '&raquo;';
             nextBtn.addEventListener('click', () => {
                 currentPage++;
                 filterEquipment();
-                window.scrollTo({top: equipmentGrid.offsetTop - 100, behavior: 'smooth'});
+                window.scrollTo({top: equipmentGrid.offsetTop - 80, behavior: 'smooth'});
             });
             paginationContainer.appendChild(nextBtn);
         }
     }
     
-    // Iniciar filtrado (se ejecutará cuando los datos estén listos)
     filterEquipment();
+    
+    window.filterEquipment = filterEquipment;
 });

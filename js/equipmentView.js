@@ -43,28 +43,35 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     setupImageGallery(allImages, product.name);
     
+    // Especificaciones Técnicas
     const specsList = document.getElementById('product-specs');
+    const specsSection = document.querySelector('.specs-section');
     if (product.specs && product.specs.length > 0) {
         product.specs.forEach(spec => {
             const li = document.createElement('li');
             li.textContent = spec;
             specsList.appendChild(li);
         });
+        specsSection.style.display = ''; // Mostrar el bloque
     } else {
-        specsList.innerHTML = '<li>No hay especificaciones disponibles</li>';
+        specsSection.style.display = 'none'; // Ocultar todo el bloque
     }
     
+    // Características Principales
     const featuresList = document.getElementById('product-features');
+    const featuresSection = document.querySelector('.features-section');
     if (product.features && product.features.length > 0) {
         product.features.forEach(feature => {
             const li = document.createElement('li');
             li.textContent = feature;
             featuresList.appendChild(li);
         });
+        featuresSection.style.display = ''; // Mostrar el bloque
     } else {
-        featuresList.innerHTML = '<li>No hay características disponibles</li>';
+        featuresSection.style.display = 'none'; // Ocultar todo el bloque
     }
     
+    // Productos Relacionados
     const relatedProducts = equipmentData.filter(item => 
         item.category === product.category && item.subcategory == product.subcategory && item.id !== product.id
     ).slice(0, 4);
@@ -99,6 +106,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         `;
     }
     
+    // Animaciones GSAP
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
         
@@ -129,6 +137,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
     
+    // Efecto magnético en botones
     if (typeof gsap !== 'undefined') {
         document.querySelectorAll('.magnetic').forEach(button => {
             button.addEventListener('mousemove', (e) => {
@@ -207,24 +216,31 @@ function openImagePopup(images, startIndex = 0, productName = '') {
     const totalImages = images.length;
     const scrollY = window.scrollY;
     
+    // Crear overlay
     const overlay = document.createElement('div');
     overlay.className = 'image-popup-overlay';
     
+    // Crear contenedor de imagen
     const content = document.createElement('div');
     content.className = 'image-popup-content';
     
+    // Crear imagen
     const img = document.createElement('img');
     img.src = images[currentIndex];
     img.alt = productName || 'Vista ampliada';
     
+    content.appendChild(img);
+    
+    // Botón de cerrar (fuera del contenedor de imagen)
     const closeBtn = document.createElement('div');
     closeBtn.className = 'close-popup';
     closeBtn.innerHTML = '✕';
     closeBtn.setAttribute('aria-label', 'Cerrar');
     
-    content.appendChild(closeBtn);
-    content.appendChild(img);
+    // Agregar botón de cerrar al overlay
+    overlay.appendChild(closeBtn);
     
+    // Función para cerrar el popup
     const closePopup = () => {
         overlay.remove();
         document.body.style.overflow = '';
@@ -235,6 +251,7 @@ function openImagePopup(images, startIndex = 0, productName = '') {
         document.removeEventListener('keydown', handleKeydown);
     };
     
+    // Manejar teclas del teclado
     const handleKeydown = (e) => {
         if (e.key === 'Escape') {
             e.preventDefault();
@@ -254,34 +271,41 @@ function openImagePopup(images, startIndex = 0, productName = '') {
     
     let updateImage = null;
     
+    // Si hay más de una imagen, agregar botones de navegación
     if (totalImages > 1) {
+        // Botón anterior
         const prevBtn = document.createElement('div');
         prevBtn.className = 'nav-popup prev';
         prevBtn.innerHTML = '❮';
         prevBtn.setAttribute('aria-label', 'Imagen anterior');
         
+        // Botón siguiente
         const nextBtn = document.createElement('div');
         nextBtn.className = 'nav-popup next';
         nextBtn.innerHTML = '❯';
         nextBtn.setAttribute('aria-label', 'Imagen siguiente');
         
+        // Contador
         const counter = document.createElement('div');
         counter.className = 'popup-counter';
         counter.textContent = `${currentIndex + 1} / ${totalImages}`;
         
-        content.appendChild(prevBtn);
-        content.appendChild(nextBtn);
-        content.appendChild(counter);
+        // Agregar botones al overlay (fuera del contenedor de imagen)
+        overlay.appendChild(prevBtn);
+        overlay.appendChild(nextBtn);
+        overlay.appendChild(counter);
         
+        // Función para actualizar imagen
         updateImage = (newIndex) => {
             currentIndex = newIndex;
             img.src = images[currentIndex];
             counter.textContent = `${currentIndex + 1} / ${totalImages}`;
             img.style.animation = 'none';
-            img.offsetHeight;
+            img.offsetHeight; // Trigger reflow
             img.style.animation = 'zoomIn 0.2s ease';
         };
         
+        // Event listeners para botones de navegación
         prevBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             let newIndex = currentIndex - 1;
@@ -297,25 +321,31 @@ function openImagePopup(images, startIndex = 0, productName = '') {
         });
     }
     
+    // Event listener para botón de cerrar
     closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         closePopup();
     });
     
+    // Event listener para cerrar al hacer clic en el overlay
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
             closePopup();
         }
     });
     
+    // Agregar contenido al overlay
     overlay.appendChild(content);
     
+    // Agregar overlay al body
     document.body.appendChild(overlay);
     
+    // Prevenir scroll del body
     document.body.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
     document.body.style.top = `-${scrollY}px`;
     document.body.style.width = '100%';
     
+    // Agregar listener de teclado
     document.addEventListener('keydown', handleKeydown);
 }

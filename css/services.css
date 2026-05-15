@@ -98,6 +98,7 @@
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .service-highlight-card::before {

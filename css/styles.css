@@ -898,7 +898,7 @@ a {
 .footer {
     background-color: var(--dark-color);
     color: var(--white);
-    padding: 100px 0 0;
+    padding: 40px 0 0;
     position: relative;
 }
 
@@ -908,7 +908,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 40px;
     background: url('../img/wave-top.svg') no-repeat center top;
     background-size: cover;
     transform: rotate(180deg);
@@ -917,17 +917,17 @@ a {
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
+    gap: 30px;
+    margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
 
 .footer-col h3 {
-    font-size: 1.3rem;
-    margin-bottom: 25px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -946,8 +946,8 @@ a {
 }
 
 .footer-logo {
-    height: 80px;
-    margin-bottom: 20px;
+    height: 60px;
+    margin-bottom: 15px;
     transition: var(--transition);
 }
 
@@ -956,8 +956,9 @@ a {
 }
 
 .footer p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
 }
 
 .social-links {
@@ -988,7 +989,8 @@ a {
 }
 
 .footer-col ul li {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 
 .footer-col ul li a {
@@ -1005,8 +1007,9 @@ a {
 .contact-info li {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
 }
 
 .contact-info i {
@@ -1019,10 +1022,10 @@ a {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px 0;
+    padding: 10px 0;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     position: relative;
     z-index: 1;
 }
